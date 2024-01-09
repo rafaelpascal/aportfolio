@@ -30,15 +30,16 @@ const Hireme = () => {
           I'm <span className="underline underline-offset-1">Available</span>{" "}
           For Freelance Work
         </h2>
-        <motion.button
-          className="w-[200px] text-[17px] font-semibold font-Manrop leading-[25.5px] text-white rounded-full px-4 py-4 mt-4 lg:mt-[4rem]"
+        <motion.a
+          href="#contact"
+          className="w-[200px] text-[17px] font-semibold text-center font-Manrop leading-[25.5px] text-white rounded-full px-4 py-4 mt-4 lg:mt-[4rem]"
           initial="initial"
           whileHover="hover"
           variants={boxVariants}
           transition={{ duration: 0.5 }}
         >
           Hire Me Now
-        </motion.button>
+        </motion.a>
       </div>
     </motion.section>
   );

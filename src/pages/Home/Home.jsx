@@ -5,7 +5,7 @@ import {
   Expertise,
   Work,
   // Pricing,
-  Testimonies,
+  // Testimonies,
   Hireme,
   Contact,
   Footer,
@@ -20,7 +20,7 @@ const Home = () => {
       <Work />
       <About />
       {/* <Pricing /> */}
-      <Testimonies />
+      {/* <Testimonies /> */}
       <Hireme />
       <Contact />
       <Footer />

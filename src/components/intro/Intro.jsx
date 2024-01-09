@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { myImage } from "../../assets";
+import { myImage, resume } from "../../assets";
 import Typical from "react-typical";
 import { FaFacebookF, FaTwitter, FaGithubAlt } from "react-icons/fa6";
+
 const Intro = () => {
   const introsentence = "Hi, I'm Rafael".split("");
 
@@ -84,15 +85,17 @@ const Intro = () => {
             wrapper="h2"
           />
         </div>
-        <motion.button
-          className="w-[200px] text-[17px] font-semibold font-Manrop leading-[25.5px] text-white rounded-full px-4 py-4 mt-4 lg:mt-[4rem]"
-          initial="initial"
-          whileHover="hover"
-          variants={boxVariants}
-          transition={{ duration: 0.5 }}
-        >
-          My Resume
-        </motion.button>
+        <a href={resume} download="resume.pdf">
+          <motion.button
+            className="w-[200px] text-[17px] font-semibold font-Manrop leading-[25.5px] text-white rounded-full px-4 py-4 mt-4 lg:mt-[4rem]"
+            initial="initial"
+            whileHover="hover"
+            variants={boxVariants}
+            transition={{ duration: 0.5 }}
+          >
+            My Resume
+          </motion.button>
+        </a>
       </motion.div>
       <div className="w-full lg:w-[50%] z-0  flex justify-end items-end">
         <img src={myImage} alt="" className="w-[530px]" />

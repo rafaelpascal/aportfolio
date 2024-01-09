@@ -22,6 +22,7 @@ import image1 from "./images/testimonies/1-3.png";
 import image2 from "./images/testimonies/2-2.png";
 import lineHire from "./icons/hireLine.png";
 import iconHire from "./icons/iconHire.png";
+import resume from "./files/raphaelResume.pdf";
 export {
   Hi,
   me,
@@ -47,4 +48,5 @@ export {
   image2,
   lineHire,
   iconHire,
+  resume,
 };

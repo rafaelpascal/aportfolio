@@ -1,9 +1,55 @@
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { IoLocationOutline } from "react-icons/io5";
 import { CiHeadphones } from "react-icons/ci";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_ra5zusb",
+        "template_xr5ed2s",
+        form.current,
+        "MAi8-OGYl-d9npcEd"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("Message Sent");
+          toast.success("Message Successfully Sent!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        },
+        (error) => {
+          console.log(error.text);
+          toast.error("Message Not Sent!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+      );
+  };
   const boxVariants = {
     initial: { backgroundColor: "#FF014F" },
     hover: { backgroundColor: "#202942" },
@@ -28,68 +74,74 @@ const Contact = () => {
           It's all about the humans behind a brand and those experiencing it, br
           we're right there. In the middle performance quick.
         </p>
-        <motion.input
-          initial={{ border: "none" }}
-          whileFocus={{ border: "2px solid #00C0FF", borderRadius: "10px" }}
-          transition={{ duration: 0.2 }}
-          style={{
-            padding: "12px",
-            outline: "none", // Remove the default focus outline
-          }}
-          className="w-full p-4 my-4"
-          type="text"
-          placeholder="Name"
-        />
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+        <form ref={form} onSubmit={sendEmail}>
           <motion.input
             initial={{ border: "none" }}
             whileFocus={{ border: "2px solid #00C0FF", borderRadius: "10px" }}
             transition={{ duration: 0.2 }}
             style={{
               padding: "12px",
-              outline: "none", // Remove the default focus outline
-            }}
-            className="w-full p-4 my-4"
-            type="email"
-            placeholder="Email"
-          />
-          <motion.input
-            initial={{ border: "none" }}
-            whileFocus={{ border: "2px solid #00C0FF", borderRadius: "10px" }}
-            transition={{ duration: 0.2 }}
-            style={{
-              padding: "12px",
-              outline: "none", // Remove the default focus outline
+              outline: "none",
             }}
             className="w-full p-4 my-4"
             type="text"
-            placeholder="Phone"
+            name="user_name"
+            placeholder="Name"
           />
-        </div>
-        <motion.textarea
-          initial={{ border: "none" }}
-          whileFocus={{ border: "2px solid #00C0FF", borderRadius: "10px" }}
-          transition={{ duration: 0.2 }}
-          style={{
-            padding: "12px",
-            outline: "none",
-            width: "100%",
-          }}
-          placeholder="Tell Us about the Project..."
-          name=""
-          id=""
-          cols="30"
-          rows="6"
-        ></motion.textarea>
-        <motion.button
-          className="w-[200px] text-[17px] font-semibold font-Manrop leading-[25.5px] text-white rounded-full px-4 py-4 mt-4 lg:mt-[2rem]"
-          initial="initial"
-          whileHover="hover"
-          variants={boxVariants}
-          transition={{ duration: 0.5 }}
-        >
-          Send Message
-        </motion.button>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+            <motion.input
+              initial={{ border: "none" }}
+              whileFocus={{ border: "2px solid #00C0FF", borderRadius: "10px" }}
+              transition={{ duration: 0.2 }}
+              style={{
+                padding: "12px",
+                outline: "none",
+              }}
+              className="w-full p-4 my-4"
+              type="email"
+              name="user_email"
+              placeholder="Email"
+            />
+            <motion.input
+              initial={{ border: "none" }}
+              whileFocus={{ border: "2px solid #00C0FF", borderRadius: "10px" }}
+              transition={{ duration: 0.2 }}
+              style={{
+                padding: "12px",
+                outline: "none",
+              }}
+              className="w-full p-4 my-4"
+              type="text"
+              name="user_phone"
+              placeholder="Phone"
+            />
+          </div>
+          <motion.textarea
+            initial={{ border: "none" }}
+            whileFocus={{ border: "2px solid #00C0FF", borderRadius: "10px" }}
+            transition={{ duration: 0.2 }}
+            style={{
+              padding: "12px",
+              outline: "none",
+              width: "100%",
+            }}
+            placeholder="Tell Us about the Project..."
+            name="message"
+            cols="30"
+            rows="6"
+          ></motion.textarea>
+          <motion.button
+            className="w-[200px] text-[17px] font-semibold font-Manrop leading-[25.5px] text-white rounded-full px-4 py-4 mt-4 lg:mt-[2rem]"
+            initial="initial"
+            whileHover="hover"
+            variants={boxVariants}
+            transition={{ duration: 0.5 }}
+            value="Send"
+            type="submit"
+          >
+            Send Message
+          </motion.button>
+        </form>
       </div>
       <div className="w-full lg:w-[70%] gap-16 flex justify-center flex-col items-center">
         <div className="flex justify-center w-full items-center gap-4">
@@ -157,6 +209,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
