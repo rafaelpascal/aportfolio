@@ -152,18 +152,18 @@ const Contact = () => {
             <h2 className="text-[15px] mb-2 font-semibold font-Manrop leading-[25px]">
               Our Email
             </h2>
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-start">
+              <a
+                className="font-Manrop text-[14px] font-semibold"
+                href="mailto:msdream234@hotmail.com"
+              >
+                ozor.rafael@gmail.com
+              </a>
               <a
                 className="font-Manrop text-[14px] font-semibold"
                 href="mailto:rafaelpascal234@gmail.com"
               >
                 rafaelpascal234@gmail.com
-              </a>
-              <a
-                className="font-Manrop text-[14px] font-semibold"
-                href="mailto:msdream234@hotmail.com"
-              >
-                msdream234@hotmail.com
               </a>
             </div>
           </div>
@@ -178,8 +178,8 @@ const Contact = () => {
             </h2>
             <div className="flex flex-col justify-center items-center">
               <p className="font-Manrop w-[190px] text-[13px] font-semibold">
-                22 Baker Street, London, United <br />
-                Kingdom, W1U 3BW
+                House 46 Drive 2 Prince and Princess <br />
+                Estate, Abuja.
               </p>
             </div>
           </div>
@@ -190,21 +190,12 @@ const Contact = () => {
           </div>
           <div>
             <h2 className="text-[15px] mb-2 font-semibold font-Manrop leading-[25px]">
-              Our Email
+              Our Phone
             </h2>
             <div className="flex flex-col justify-center items-center">
-              <a
-                className="font-Manrop text-[14px] font-semibold"
-                href="mailto:rafaelpascal234@gmail.com"
-              >
-                rafaelpascal234@gmail.com
-              </a>
-              <a
-                className="font-Manrop text-[14px] font-semibold"
-                href="mailto:msdream234@hotmail.com"
-              >
-                msdream234@hotmail.com
-              </a>
+              <p className="font-Manrop  w-[190px]  text-[14px] font-semibold">
+                +234 8164493471
+              </p>
             </div>
           </div>
         </div>

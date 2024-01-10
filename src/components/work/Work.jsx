@@ -96,13 +96,21 @@ const Work = () => {
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
                   React and Node JS, Mongo DB.
                 </p>
-                <button className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]">
+                <a
+                  href="https://amazonstores.netlify.app/"
+                  target="_blank"
+                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
+                >
                   Ecommerce
-                </button>
+                </a>
               </div>
-              <button className="rounded-full p-[8px] border-2 border-[#202942]">
+              <a
+                href="https://amazonstores.netlify.app/"
+                target="_blank"
+                className="rounded-full p-[8px] border-2 border-[#202942]"
+              >
                 <FaArrowRightLong />
-              </button>
+              </a>
             </motion.div>
           )}
         </div>
@@ -128,13 +136,21 @@ const Work = () => {
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
                   Vue and Node JS, MySQL DB.
                 </p>
-                <button className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]">
+                <a
+                  href="https://gettcc.online"
+                  target="_blank"
+                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
+                >
                   Get TCC.
-                </button>
+                </a>
               </div>
-              <button className="rounded-full p-[8px] border-2 border-[#202942]">
+              <a
+                href="https://gettcc.online"
+                target="_blank"
+                className="rounded-full p-[8px] border-2 border-[#202942]"
+              >
                 <FaArrowRightLong />
-              </button>
+              </a>
             </motion.div>
           )}
         </div>
@@ -160,13 +176,21 @@ const Work = () => {
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
                   React JS
                 </p>
-                <button className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]">
+                <a
+                  href="https://mrraph.netlify.app"
+                  target="_blank"
+                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
+                >
                   Personal Portfolio
-                </button>
+                </a>
               </div>
-              <button className="rounded-full p-[8px] border-2 border-[#202942]">
+              <a
+                href="https://mrraph.netlify.app"
+                target="_blank"
+                className="rounded-full p-[8px] border-2 border-[#202942]"
+              >
                 <FaArrowRightLong />
-              </button>
+              </a>
             </motion.div>
           )}
         </div>
@@ -195,13 +219,21 @@ const Work = () => {
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
                   Vue and Node JS, MySQL
                 </p>
-                <button className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]">
+                <a
+                  href="https://srep.appmart.ng"
+                  target="_blank"
+                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
+                >
                   Task Reporting
-                </button>
+                </a>
               </div>
-              <button className="rounded-full p-[8px] border-2 border-[#202942]">
+              <a
+                href="https://srep.appmart.ng"
+                target="_blank"
+                className="rounded-full p-[8px] border-2 border-[#202942]"
+              >
                 <FaArrowRightLong />
-              </button>
+              </a>
             </motion.div>
           )}
         </div>

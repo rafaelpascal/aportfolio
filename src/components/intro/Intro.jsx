@@ -31,30 +31,36 @@ const Intro = () => {
       className="py-10 lg:max-w-7xl lg:mx-auto pt-[1rem] lg:pt-0 flex flex-col sm:flex-row lg:justify-between lg:items-start justify-center items-start"
     >
       <div className="fixed right-0 bg-white ng px-5 py-2 top-[16rem] flex flex-col z-10">
-        <motion.button
+        <motion.a
+          href="https://twitter.com/RaphaelEmehelu"
+          target="_blank"
           initial="initial"
           whileHover="hover"
           variants={textVariants}
           transition={{ duration: 0.5 }}
         >
           <FaFacebookF className="my-4" />
-        </motion.button>
-        <motion.button
+        </motion.a>
+        <motion.a
+          href="https://twitter.com/RaphaelEmehelu"
+          target="_blank"
           initial="initial"
           whileHover="hover"
           variants={textVariants}
           transition={{ duration: 0.5 }}
         >
           <FaTwitter className="my-4" />
-        </motion.button>
-        <motion.button
+        </motion.a>
+        <motion.a
+          href="https://twitter.com/RaphaelEmehelu"
+          target="_blank"
           initial="initial"
           whileHover="hover"
           variants={textVariants}
           transition={{ duration: 0.5 }}
         >
           <FaGithubAlt className="my-4" />
-        </motion.button>
+        </motion.a>
       </div>
       <motion.div className="w-full lg:w-[50%] pl-5 lg:pl-[5rem]">
         <h1 className="text-stroke-transparent text-[70px] lg:text-[104px] mt-[4rem] text-[#202942] uppercase font-bold">
