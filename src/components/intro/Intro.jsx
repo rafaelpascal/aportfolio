@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { myImage, resume } from "../../assets";
 import Typical from "react-typical";
-import { FaFacebookF, FaTwitter, FaGithubAlt } from "react-icons/fa6";
+import { FaLinkedin, FaTwitter, FaGithubAlt } from "react-icons/fa6";
 
 const Intro = () => {
   const introsentence = "Hi, I'm Rafael".split("");
@@ -32,14 +32,14 @@ const Intro = () => {
     >
       <div className="fixed right-0 bg-white ng px-5 py-2 top-[16rem] flex flex-col z-10">
         <motion.a
-          href="https://twitter.com/RaphaelEmehelu"
+          href="https://www.linkedin.com/in/raphael-emehelu-20724b13a/"
           target="_blank"
           initial="initial"
           whileHover="hover"
           variants={textVariants}
           transition={{ duration: 0.5 }}
         >
-          <FaFacebookF className="my-4" />
+          <FaLinkedin className="my-4" />
         </motion.a>
         <motion.a
           href="https://twitter.com/RaphaelEmehelu"
@@ -52,7 +52,7 @@ const Intro = () => {
           <FaTwitter className="my-4" />
         </motion.a>
         <motion.a
-          href="https://twitter.com/RaphaelEmehelu"
+          href="https://github.com/rafaelpascal"
           target="_blank"
           initial="initial"
           whileHover="hover"
