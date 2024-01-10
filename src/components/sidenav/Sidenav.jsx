@@ -34,6 +34,7 @@ const Sidenav = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   const textVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0 },

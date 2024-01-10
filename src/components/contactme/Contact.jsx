@@ -155,7 +155,7 @@ const Contact = () => {
             <div className="flex flex-col justify-center items-start">
               <a
                 className="font-Manrop text-[14px] font-semibold"
-                href="mailto:msdream234@hotmail.com"
+                href="mailto:ozor.rafael@gmail.com"
               >
                 ozor.rafael@gmail.com
               </a>
