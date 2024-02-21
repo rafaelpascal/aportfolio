@@ -27,8 +27,7 @@ const Hireme = () => {
       />
       <div className="flex justify-center flex-col items-center">
         <h2 className="text-[30px] lg:text-[60px] font-bold text-center font-Manrop w-full lg:w-[500px] lg:leading-[66px] text-[#202942] ">
-          I'm <span className="underline underline-offset-1">Available</span>{" "}
-          For Freelance Work
+          I'm Available For Freelance Work
         </h2>
         <motion.a
           href="#contact"

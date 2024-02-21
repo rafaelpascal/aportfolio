@@ -21,6 +21,7 @@ const Sidenav = () => {
     key5: false,
     key6: false,
   });
+
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth < 840);
@@ -46,6 +47,7 @@ const Sidenav = () => {
       [key]: newValue,
     }));
   };
+
   return (
     <div className="relative z-10 ">
       {isSmallScreen ? (

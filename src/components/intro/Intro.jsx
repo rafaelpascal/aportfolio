@@ -28,7 +28,7 @@ const Intro = () => {
   return (
     <section
       id="#"
-      className="py-10 lg:max-w-7xl lg:mx-auto pt-[1rem] lg:pt-0 flex flex-col sm:flex-row lg:justify-between lg:items-start justify-center items-start"
+      className="py-0 lg:max-w-7xl lg:mx-auto pt-[1rem] lg:pt-0 flex flex-col sm:flex-row lg:justify-between lg:items-start justify-center items-start"
     >
       <div className="fixed right-0 bg-white ng px-5 py-2 top-[16rem] flex flex-col z-10">
         <motion.a
@@ -80,7 +80,7 @@ const Intro = () => {
         <div className="text-[24px] lg:text-[30px] font-bold leading-[36px] text-[#202942] underline mt-2 lg:mt-4">
           <Typical
             steps={[
-              "Front end Developer",
+              "Frontend Developer",
               10000,
               "Backend Developer",
               10000,
@@ -104,7 +104,7 @@ const Intro = () => {
         </a>
       </motion.div>
       <div className="w-full lg:w-[50%] z-0  flex justify-end items-end">
-        <img src={myImage} alt="" className="w-[530px]" />
+        <img src={myImage} alt="" className="w-full lg:w-[630px]" />
       </div>
     </section>
   );

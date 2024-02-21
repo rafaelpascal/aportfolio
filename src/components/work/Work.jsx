@@ -51,7 +51,7 @@ const Work = () => {
         </p>
         <div className="flex flex-col sm:flex-row lg:justify-between lg:items-start justify-center items-start">
           <h2 className="text-[26px] lg:text-[36px] font-extrabold leading-[43.2px] text-[#202942] font-Manrop w-full lg:w-[450px]">
-            Look at my Recent Work
+            Some of my Recent Work
           </h2>
           {/* <div className="w-full lg:w-[400px] mt-8 flex justify-between items-center">
             <div>

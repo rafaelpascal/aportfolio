@@ -31,8 +31,8 @@ const About = () => {
       setProgress((prevProgress) => ({
         ...prevProgress,
         key1: prevProgress < 90 ? prevProgress + 5 : 90,
-        key2: prevProgress < 75 ? prevProgress + 10 : 75,
-        key3: prevProgress < 70 ? prevProgress + 4 : 70,
+        key2: prevProgress < 80 ? prevProgress + 10 : 80,
+        key3: prevProgress < 75 ? prevProgress + 8 : 75,
         key4: prevProgress < 80 ? prevProgress + 8 : 80,
       }));
     }, 1000);
@@ -84,7 +84,7 @@ const About = () => {
               ABOUT ME
             </p>
             <h2 className="w-full lg:w-[300px] text-[36px] font-extrabold leading-[43.2px] text-[#202942] font-Manrop">
-              I can Develop.
+              I Can Develop.
             </h2>
             <p className="text-[15px] text-[#666666] font-Manrop text-justify mt-8 leading-[25.5px] font-normal mb-4">
               A skilled software developer with over 2 years of experience, I am
@@ -308,7 +308,7 @@ const About = () => {
                         width: `${progress.key4}%`,
                         height: "10px",
                         backgroundColor: "#FF014F",
-                        transition: "width 0.5s ease-in-out", // Add a transition for smooth animation
+                        transition: "width 0.5s ease-in-out",
                       }}
                     />
                   </div>
