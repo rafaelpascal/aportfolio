@@ -97,7 +97,7 @@ const Work = () => {
                   React and Node JS, Mongo DB.
                 </p>
                 <a
-                  href="https://amazonstores.netlify.app/"
+                  // href="https://amazonstores.netlify.app/"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
@@ -105,7 +105,7 @@ const Work = () => {
                 </a>
               </div>
               <a
-                href="https://amazonstores.netlify.app/"
+                // href="https://amazonstores.netlify.app/"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
@@ -137,7 +137,7 @@ const Work = () => {
                   Vue and Node JS, MySQL DB.
                 </p>
                 <a
-                  href="https://gettcc.online"
+                  // href="https://gettcc.online"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
@@ -145,7 +145,7 @@ const Work = () => {
                 </a>
               </div>
               <a
-                href="https://gettcc.online"
+                // href="https://gettcc.online"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
