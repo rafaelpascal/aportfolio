@@ -78,7 +78,8 @@ const Intro = () => {
           );
         })}
         <div className="text-[24px] lg:text-[30px] font-bold leading-[36px] text-[#202942] underline mt-2 lg:mt-4">
-          <Typical
+          <p>Fullstack Developer</p>
+          {/* <Typical
             steps={[
               "Frontend Developer",
               10000,
@@ -89,7 +90,7 @@ const Intro = () => {
             ]}
             loop={Infinity}
             wrapper="h2"
-          />
+          /> */}
         </div>
         <a href={resume} download="resume.pdf">
           <motion.button
