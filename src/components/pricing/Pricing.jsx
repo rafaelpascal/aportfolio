@@ -45,8 +45,8 @@ const Pricing = () => {
                   Static frontend Development
                 </h2>
                 <h1 className="text-[26px] lg:text-[36px] font-extrabold leading-[43.2px] text-[#202942] font-Manrop">
-                  <span className="text-xs align-top">$</span>
-                  328.77
+                  <span className="text-xs align-top">NGN</span>
+                  300,000.00
                 </h1>
               </div>
               <ol>

@@ -1,11 +1,11 @@
 import React from "react";
-import { FaTwitter, FaFacebook, FaWhatsapp } from "react-icons/fa6";
+import { FaTwitter, FaSlack, FaWhatsapp } from "react-icons/fa6";
 import { FaLinkedinIn, FaFacebookMessenger } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <section className="w-full py-[2rem] flex justify-center items-center bg-[#040836] mt-[4rem]">
-      <div className="lg:max-w-6xl mx-auto">
+    <section className="w-full py-9 lg:py-[2rem] flex justify-center items-center bg-[#040836] mt-[4rem]">
+      <div className="lg:max-w-6xl mx-auto w-[50%] lg:w-[15%]">
         <div className="flex justify-center items-center my-[1rem]">
           <a
             href="#"
@@ -47,7 +47,7 @@ const Footer = () => {
             <FaLinkedinIn className="text-[18px] text-[#040836]" />
           </a>
         </div>
-        <h2 className="text-[12px] text-white font-normal font-Manrop leading-[25px]">
+        <h2 className="text-[12px] text-white text-center font-normal font-Manrop leading-[25px]">
           © Mr.Raph Website. All rights reserved
         </h2>
       </div>

@@ -5,6 +5,7 @@ import { HiOutlineMailOpen } from "react-icons/hi";
 import { IoLocationOutline } from "react-icons/io5";
 import { CiHeadphones } from "react-icons/ci";
 import { ToastContainer, toast } from "react-toastify";
+import { pricing } from "../../assets";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
@@ -54,13 +55,22 @@ const Contact = () => {
     initial: { backgroundColor: "#FF014F" },
     hover: { backgroundColor: "#202942" },
   };
+
+  const bounceAnimation = {
+    y: [0, -30, 0],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  };
   return (
     <section
       id="contact"
-      className="py-10 lg:max-w-6xl mx-auto mt-[4rem] flex flex-col gap-20 sm:flex-row"
+      className="py-4 lg:py-10 lg:max-w-6xl w-full mx-auto mt-[4rem] flex flex-col gap-20 sm:flex-row justify-end items-end"
     >
       <div
-        className="w-full lg:w-[30%] p-11"
+        className="w-full lg:w-[70%] p-11"
         style={{
           width: "100%",
           background: "linear-gradient(to right, #FDF8E3, #F1F9F4)",
@@ -71,8 +81,8 @@ const Contact = () => {
           Lets Talk?
         </h2>
         <p className="text-[15px] text-[#666666] font-Manrop leading-[25.5px] font-normal mb-4">
-          It's all about the humans behind a brand and those experiencing it, br
-          we're right there. In the middle performance quick.
+          It's all about the humans behind a brand and those experiencing it, I
+          am right there, In the middle performance quick.
         </p>
         <form ref={form} onSubmit={sendEmail}>
           <motion.input
@@ -143,7 +153,7 @@ const Contact = () => {
           </motion.button>
         </form>
       </div>
-      <div className="w-full lg:w-[70%] gap-16 flex justify-center flex-col items-center">
+      <div className="w-full lg:w-[30%] gap-6 flex justify-center flex-col items-center">
         <div className="flex justify-center w-full items-center gap-4">
           <div className="bg-[#00C0FF] p-4 rounded-lg">
             <HiOutlineMailOpen className="text-[50px] text-white" />
@@ -173,13 +183,13 @@ const Contact = () => {
             <IoLocationOutline className="text-[50px] text-white" />
           </div>
           <div>
-            <h2 className="text-[15px] mb-2 font-semibold font-Manrop leading-[25px]">
-              ADDRESS
+            <h2 className="text-[15px] mb-1 font-semibold font-Manrop leading-[25px]">
+              CURRENT ADDRESS
             </h2>
             <div className="flex flex-col justify-center items-center">
               <p className="font-Manrop w-[190px] text-[13px] font-semibold">
-                House 46 Drive 2 Prince and Princess <br />
-                Estate, Abuja.
+                Prince and Princess <br />
+                Estate, FCT Abuja.
               </p>
             </div>
           </div>
@@ -198,6 +208,14 @@ const Contact = () => {
               </p>
             </div>
           </div>
+        </div>
+        <div className="w-full lg:w-[100%] mt-4">
+          <motion.img
+            src={pricing}
+            alt="Web"
+            className="w-[100%]"
+            animate={bounceAnimation}
+          />
         </div>
       </div>
       <ToastContainer />

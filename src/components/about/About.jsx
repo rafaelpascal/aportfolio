@@ -170,36 +170,36 @@ const About = () => {
               </div>
               <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
                 <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Age
+                  Area of Expertise
                 </h2>
                 <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  33
+                  Web Development
                 </p>
               </div>
               <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
                 <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Email
+                  Nationality
                 </h2>
                 <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  rafaelpascal234@gmail.com
+                  Nigeria
                 </p>
               </div>
               <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
                 <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Skype
+                  Course of Study
                 </h2>
                 <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  rafaelpascal234@gmail.com
+                  Computer Science
                 </p>
               </div>
             </div>
             <div className="w-full px-4 lg:w-[50%]">
               <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
                 <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Birthday
+                  Education
                 </h2>
                 <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  30 November, 1990
+                  Higher National Deploma
                 </p>
               </div>
               <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
@@ -207,23 +207,23 @@ const About = () => {
                   Address
                 </h2>
                 <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  Prince and Princess Estate, Abuja
+                  Prince and Princess Estate, FCT Abuja
                 </p>
               </div>
               <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
                 <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Phone
+                  Years of Experience
                 </h2>
                 <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  +234 81644 93471
+                  3 +
                 </p>
               </div>
               <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
                 <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Freelance
+                  Preferred Language
                 </h2>
                 <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  Available
+                  English
                 </p>
               </div>
             </div>

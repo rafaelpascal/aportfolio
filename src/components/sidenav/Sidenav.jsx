@@ -52,7 +52,7 @@ const Sidenav = () => {
     <div className="relative z-10 ">
       {isSmallScreen ? (
         <div className="fixed top-0 p-6 left-0 w-[100%]">
-          <button className="backdrop-filter backdrop-blur-xl p-[1rem] rounded-3xl">
+          <button className="backdrop-filter backdrop-blur-xl p-[1rem] w-full rounded-3xl">
             <img
               src={toggle ? close : menu}
               alt="Menu"
