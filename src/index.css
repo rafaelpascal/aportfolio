@@ -23,7 +23,6 @@ a {
 
 section {
   height: auto;
-  scroll-snap-align: center;
 }
 
 .text-stroke-transparent {
