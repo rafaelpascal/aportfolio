@@ -33,7 +33,7 @@ const Footer = () => {
           </a>
           <a
             className="bg-slate-500 p-3 rounded-lg"
-            href="https://api.whatsapp.com/send?phone=08164493471"
+            href="https://api.whatsapp.com/send?phone=+2348164493471"
             target="_blank"
             rel="noreferrer"
           >
