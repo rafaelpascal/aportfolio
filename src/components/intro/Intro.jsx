@@ -29,7 +29,7 @@ const Intro = () => {
       id="#"
       className="py-0 lg:max-w-7xl lg:mx-auto pt-[1rem] lg:pt-0 flex flex-col sm:flex-row lg:justify-between lg:items-start justify-center items-start"
     >
-      <div className="fixed right-0 bg-white ng px-5 py-2 top-[16rem] flex flex-col z-10">
+      <div className="fixed right-0 bg-transparent lg:bg-white ng px-5 py-2 top-[16rem] flex flex-col z-10">
         <motion.a
           href="https://www.linkedin.com/in/raphael-emehelu-20724b13a/"
           target="_blank"
@@ -76,7 +76,7 @@ const Intro = () => {
             </motion.h2>
           );
         })}
-        <div className="text-[24px] lg:text-[30px] font-bold leading-[36px] text-[#202942] underline mt-2 lg:mt-4">
+        <div className="text-[24px] lg:text-[30px] font-bold leading-[36px] text-[#202942] mt-2 lg:mt-4">
           <p>Fullstack Developer</p>
           {/* <Typical
             steps={[
