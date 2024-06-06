@@ -1,27 +1,42 @@
 {
   "name": "portfolio",
-  "short_name": "Agr",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
+  "short_name": "port",
   "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
-      "src": "../src/assets/icons/footerlogo.png",
-      "sizes": "192x192",
+      "src": "../src/assets/maskable.png",
+      "sizes": "196x196",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
-      "src": "../src/assets/icons/footerlogo.png",
+      "src": "../src/assets/footer192logo.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "../src/assets/icons/footerlogo.png",
+      "src": "../src/assets/footer256logo.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "../src/assets/footer384logo.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "../src/assets/footer512logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "splash_pages": null
+  "splash_screen": {
+    "image": "../src/assets/apple-touch-icon.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }
 }
