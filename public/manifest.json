@@ -8,41 +8,36 @@
   "start_url": "/",
   "icons": [
     {
-      "src": "../src/assets/maskable.png",
+      "src": "/maskable.png",
       "sizes": "196x196",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "../src/assets/footer192logo.png",
+      "src": "/footer192logo.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "../src/assets/footer256logo.png",
+      "src": "/footer256logo.png",
       "sizes": "256x256",
       "type": "image/png"
     },
     {
-      "src": "../src/assets/footer384logo.png",
+      "src": "/footer384logo.png",
       "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "../src/assets/footer512logo.png",
+      "src": "/footer512logo.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "../src/assets/footer144logo.png",
+      "src": "/footer144logo.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     }
-  ],
-  "splash_screen": {
-    "image": "../src/assets/apple-touch-icon.png",
-    "sizes": "144x144",
-    "type": "image/png"
-  }
+  ]
 }
