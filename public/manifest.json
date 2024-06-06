@@ -31,6 +31,12 @@
     {
       "src": "../src/assets/footer512logo.png",
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../src/assets/footer144logo.png",
+      "sizes": "144x144",
       "type": "image/png"
     }
   ],
