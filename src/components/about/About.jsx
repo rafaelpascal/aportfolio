@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { node, vue, react, javascript, me } from "../../assets";
+import { node, vue, react, javascript, me, typescript } from "../../assets";
 import { motion } from "framer-motion";
 const About = () => {
   const [progress, setProgress] = useState({
@@ -7,6 +7,8 @@ const About = () => {
     key2: 0,
     key3: 0,
     key4: 0,
+    key5: 0,
+    key6: 0,
   });
   const [skills, setSkills] = useState({
     key1: true,
@@ -32,8 +34,10 @@ const About = () => {
         ...prevProgress,
         key1: prevProgress < 90 ? prevProgress + 5 : 90,
         key2: prevProgress < 80 ? prevProgress + 10 : 80,
-        key3: prevProgress < 75 ? prevProgress + 8 : 75,
-        key4: prevProgress < 80 ? prevProgress + 8 : 80,
+        key3: prevProgress < 85 ? prevProgress + 8 : 85,
+        key4: prevProgress < 70 ? prevProgress + 8 : 70,
+        key5: prevProgress < 70 ? prevProgress + 8 : 70,
+        key6: prevProgress < 80 ? prevProgress + 8 : 80,
       }));
     }, 1000);
     return () => clearInterval(interval);
@@ -253,11 +257,31 @@ const About = () => {
                     />
                   </div>
                 </div>
+                <div className="w-full flex flex-col sm:flex-row justify-between gap-4 lg:gap-20 items-center">
+                  <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
+                    <img src={typescript} alt="" className="w-[50px]" />
+                    <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
+                      Typescript
+                    </h2>
+                  </div>
+                  <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
+                    <h2 className="text-[16px] lg:text-[30px] font-bold font-Manrop leading-[24px] text-[#202942]">{`${progress.key1}%`}</h2>
+                    <div
+                      style={{
+                        borderRadius: "50px",
+                        width: `${progress.key6}%`,
+                        height: "10px",
+                        backgroundColor: "#FF014F",
+                        transition: "width 0.5s ease-in-out",
+                      }}
+                    />
+                  </div>
+                </div>
                 <div className="w-full flex flex-col sm:flex-row  justify-between gap-4 lg:gap-20 items-center">
                   <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
                     <img src={node} alt="" className="w-[50px]" />
                     <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                      Backend with Node JS
+                      Node JS
                     </h2>
                   </div>
                   <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
@@ -277,7 +301,7 @@ const About = () => {
                   <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
                     <img src={react} alt="" className="w-[50px]" />
                     <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                      Frontend with React JS
+                      React JS
                     </h2>
                   </div>
                   <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
@@ -297,7 +321,7 @@ const About = () => {
                   <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
                     <img src={vue} alt="" className="w-[50px]" />
                     <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                      Frontend with Vue JS
+                      Vue JS
                     </h2>
                   </div>
                   <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
@@ -306,6 +330,26 @@ const About = () => {
                       style={{
                         borderRadius: "50px",
                         width: `${progress.key4}%`,
+                        height: "10px",
+                        backgroundColor: "#FF014F",
+                        transition: "width 0.5s ease-in-out",
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="w-full flex flex-col sm:flex-row justify-between gap-4 lg:gap-20 items-center">
+                  <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
+                    <img src={react} alt="" className="w-[50px]" />
+                    <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
+                      Mobile App with React Native
+                    </h2>
+                  </div>
+                  <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
+                    <h2 className="text-[16px] lg:text-[30px] font-bold font-Manrop leading-[24px] text-[#202942]">{`${progress.key4}%`}</h2>
+                    <div
+                      style={{
+                        borderRadius: "50px",
+                        width: `${progress.key5}%`,
                         height: "10px",
                         backgroundColor: "#FF014F",
                         transition: "width 0.5s ease-in-out",

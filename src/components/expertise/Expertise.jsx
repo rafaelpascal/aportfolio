@@ -31,10 +31,10 @@ const Expertise = () => {
         </div>
       </div>
       <div className="flex w-full flex-col sm:flex-row lg:justify-between lg:items-start justify-center items-start">
-        <div className="px-0 w-full lg:w-[30%] lg:px-4">
+        <div className="px-0 w-full lg:w-[25%] lg:px-4">
           <img src={pencil} alt="Web" className="w-[80px] mb-12" />
           <motion.h2
-            className="text-[20px] font-Manrop leading-[24px] font-bold mb-4 cursor-pointer"
+            className="text-[18px] font-Manrop leading-[24px] font-bold mb-4 cursor-pointer"
             initial="initial"
             whileHover="hover"
             variants={textVariants}
@@ -47,10 +47,10 @@ const Expertise = () => {
             React Js, Vue Js.
           </p>
         </div>
-        <div className="border-none w-full lg:w-[35%] lg:border-x-[2px] lg:border-[#E3E7F5] px-0 lg:px-6">
+        <div className="border-none w-full lg:w-[25%] lg:border-x-[2px] lg:border-[#E3E7F5] px-0 lg:px-6">
           <img src={appDev} alt="Web" className="w-[80px] mb-8" />
           <motion.h2
-            className="text-[20px] font-Manrop leading-[24px] font-bold mb-4 cursor-pointer"
+            className="text-[18px] font-Manrop leading-[24px] font-bold mb-4 cursor-pointer"
             initial="initial"
             whileHover="hover"
             variants={textVariants}
@@ -59,14 +59,29 @@ const Expertise = () => {
             Backend Development
           </motion.h2>
           <p className="text-[15px] h-[100px] w-full text-[#666666] font-Manrop leading-[25.5px] font-normal mb-4">
-            With Node Js i am able to work on any Backend project, I am very
-            good with Mongo DB, MySql, Postgress.
+            With Node Js i am able to work on any Backend project.
           </p>
         </div>
-        <div className="px-0 w-full lg:w-[35%] lg:px-4">
+        <div className="px-0 w-full lg:w-[25%] lg:px-4">
+          <img src={pencil} alt="Web" className="w-[80px] mb-12" />
+          <motion.h2
+            className="text-[18px] font-Manrop leading-[24px] font-bold mb-4 cursor-pointer"
+            initial="initial"
+            whileHover="hover"
+            variants={textVariants}
+            transition={{ duration: 0.5 }}
+          >
+            Mobile App Development
+          </motion.h2>
+          <p className="text-[15px] h-[100px] w-full text-[#666666] font-Manrop leading-[25.5px] font-normal mb-4">
+            With React Native I can comfortably work on any mobile app
+            Development, IOS or Apk.
+          </p>
+        </div>
+        <div className="px-0 w-full lg:w-[25%] lg:px-4">
           <img src={backend} alt="Web" className="w-[80px] mb-8" />
           <motion.h2
-            className="text-[20px] font-Manrop leading-[24px] font-bold mb-4 cursor-pointer"
+            className="text-[18px] font-Manrop leading-[24px] font-bold mb-4 cursor-pointer"
             initial="initial"
             whileHover="hover"
             variants={textVariants}
@@ -75,8 +90,8 @@ const Expertise = () => {
             Mentorship
           </motion.h2>
           <p className="text-[15px] h-[100px] w-full text-[#666666] font-Manrop leading-[25.5px] font-normal mb-4">
-            With the Knowledge i have in web Development i can Lecture and
-            mentor anyone who is willing to learn web Development.
+            With the Knowledge i have in Software Development i can Lecture and
+            mentor anyone who is willing to learn.
           </p>
         </div>
       </div>

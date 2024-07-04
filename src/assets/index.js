@@ -7,9 +7,9 @@ import appDev from "./icons/appdev.png";
 import backend from "./icons/backend.png";
 import recent from "./icons/recent.png";
 import project1 from "./images/project/amazon.png";
-import project2 from "./images/project/gettcc.png";
+import project2 from "./images/project/nicetel.png";
 import project3 from "./images/project/portfolio.png";
-import project4 from "./images/project/srep.png";
+import project4 from "./images/project/agrify.png";
 import project5 from "./images/project/dhabs.png";
 import project6 from "./images/project/mmm.png";
 import me from "./icons/work.png";
@@ -23,6 +23,7 @@ import image2 from "./images/testimonies/2-2.png";
 import lineHire from "./icons/hireLine.png";
 import iconHire from "./icons/iconHire.png";
 import resume from "./files/raphaelResume.pdf";
+import typescript from "./icons/typescript.png";
 export {
   Hi,
   me,
@@ -49,4 +50,5 @@ export {
   lineHire,
   iconHire,
   resume,
+  typescript,
 };

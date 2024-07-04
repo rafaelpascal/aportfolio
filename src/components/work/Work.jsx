@@ -134,18 +134,18 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  Vue and Node JS, MySQL DB.
+                  React Js and Node JS, MySQL DB, Typescript.
                 </p>
                 <a
-                  // href="https://gettcc.online"
+                  href="https://admin.nicetel.com.ng/"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Get TCC.
+                  Nicetel Admin.
                 </a>
               </div>
               <a
-                // href="https://gettcc.online"
+                href="https://admin.nicetel.com.ng/"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
@@ -217,18 +217,18 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  Vue and Node JS, MySQL
+                  React Native and Node JS (Coming Soon)
                 </p>
                 <a
-                  href="https://srep.appmart.ng"
+                  // href="https://srep.appmart.ng"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Task Reporting
+                  Agrify Mobile App
                 </a>
               </div>
               <a
-                href="https://srep.appmart.ng"
+                // href="https://srep.appmart.ng"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
