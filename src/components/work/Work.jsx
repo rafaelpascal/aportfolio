@@ -53,10 +53,10 @@ const Work = () => {
           <h2 className="text-[26px] lg:text-[36px] font-extrabold leading-[43.2px] text-[#202942] font-Manrop w-full lg:w-[450px]">
             Some of my Recent Work
           </h2>
-          {/* <div className="w-full lg:w-[400px] mt-8 flex justify-between items-center">
+          <div className="w-full lg:w-[400px] mt-8 flex justify-between items-center">
             <div>
               <h2 className="text-[45px] font-extrabold leading-[45px] text-[#202942] font-Manrop w-full lg:w-[250px]">
-                {count} K
+                10+
               </h2>
               <p className="text-[15px] font-semibold leading-[28px] text-[#202942] font-Manrop w-full lg:w-[250px]">
                 Completed Project
@@ -64,13 +64,13 @@ const Work = () => {
             </div>
             <div>
               <h2 className="text-[45px] font-extrabold leading-[45px] text-[#202942] font-Manrop w-full lg:w-[250px]">
-                95%
+                85%
               </h2>
               <p className="text-[15px] font-semibold leading-[28px] text-[#202942] font-Manrop w-full lg:w-[250px]">
                 Positive Rating
               </p>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
       <div className="flex justify-between items-center gap-6 flex-col sm:flex-row">
@@ -97,7 +97,7 @@ const Work = () => {
                   React and Node JS, Mongo DB.
                 </p>
                 <a
-                  // href="https://amazonstores.netlify.app/"
+                  href="https://amazonstores.netlify.app/"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
@@ -105,7 +105,7 @@ const Work = () => {
                 </a>
               </div>
               <a
-                // href="https://amazonstores.netlify.app/"
+                href="https://amazonstores.netlify.app/"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
