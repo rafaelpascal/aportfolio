@@ -39,18 +39,16 @@ const Testimonies = () => {
               <img src={image1} alt="" className="text-center w-[200px]" />
             </div>
             <p className="text-[20px] text-[#666666] text-center font-Manrop leading-[25.5px] font-normal mb-6">
-              "sang know now always remembering to the point.” Matthew J. Wyman
-              Senior Consultant AmbroxAmbrox “Targetingconsultation discover
-              apartments. ndulgence off under folly death wrote cause her way
-              spite. Plan upon yet way get cold spot its week. Almost do am or
-              limits hearts. Resolve parties but why she shewing. She sang know
-              now always remembering to the point.”
+              "Raphael is Good in Web Development, I like him because he pays
+              close attention to every detail in any figma design and he will
+              always strive to meet deadline and get every Detail, he is playful
+              when its time to play, Quiet and Hardworking."
             </p>
             <h2 className="text-[20px] text-center font-Manrop leading-[25.5px] font-semibold mb-2">
-              John Doe
+              John
             </h2>
             <p className="text-[20px] text-[#FB0452] text-center font-Manrop leading-[25.5px] font-normal mb-2">
-              Writer
+              UI/UX
             </p>
           </div>
           <div className="w-full">

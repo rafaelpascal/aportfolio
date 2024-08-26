@@ -8,6 +8,9 @@ import {
   project4,
   project5,
   project6,
+  project7,
+  project8,
+  project9,
 } from "../../assets";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -19,6 +22,9 @@ const Work = () => {
     key4: false,
     key5: false,
     key6: false,
+    key7: false,
+    key8: false,
+    key9: false,
   });
 
   const controls = useAnimation();
@@ -101,7 +107,7 @@ const Work = () => {
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Ecommerce
+                  Ecommerce (Live)
                 </a>
               </div>
               <a
@@ -141,7 +147,7 @@ const Work = () => {
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Nicetel Admin.
+                  Nicetel Admin. (Live)
                 </a>
               </div>
               <a
@@ -181,7 +187,7 @@ const Work = () => {
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Personal Portfolio
+                  Personal Portfolio (Live)
                 </a>
               </div>
               <a
@@ -217,18 +223,16 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  React Native and Node JS (Coming Soon)
+                  React Native and Node JS
                 </p>
                 <a
-                  // href="https://srep.appmart.ng"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Agrify Mobile App
+                  Agrify Mobile App (Coming Soon)
                 </a>
               </div>
               <a
-                // href="https://srep.appmart.ng"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
@@ -260,7 +264,7 @@ const Work = () => {
                   React JS, Tailwind
                 </p>
                 <button className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]">
-                  Personal Porfolio
+                  Personal Porfolio (Coming Soon)
                 </button>
               </div>
               <button
@@ -295,7 +299,124 @@ const Work = () => {
                   Vue JS, Tailwind
                 </p>
                 <button className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]">
-                  Mind Store
+                  Mind Store (Coming Soon)
+                </button>
+              </div>
+              <button
+                disabled
+                className="rounded-full p-[8px] border-2 border-[#202942]"
+              >
+                <FaArrowRightLong />
+              </button>
+            </motion.div>
+          )}
+        </div>
+      </div>
+      <div className="flex justify-between items-center gap-6 mt-6 flex-col sm:flex-row">
+        <div
+          className="w-full lg:w-[400px] relative"
+          onMouseEnter={() => updateStateForKey("key7", true)}
+          onMouseLeave={() => updateStateForKey("key7", false)}
+        >
+          <img src={project7} alt="" srcset="" />
+          {workhover.key7 && (
+            <motion.div
+              className={` flex w-full justify-between items-center px-6 ${
+                workhover.key7
+                  ? "bg-white h-[60px] w-full absolute bottom-0"
+                  : "bg-white h-[60px] w-full absolute bottom-0"
+              }`}
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+              transition={{ duration: 0.5 }}
+            >
+              <div>
+                <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
+                  Vue Js and Node JS
+                </p>
+                <a
+                  href="https://srep.appmart.ng"
+                  target="_blank"
+                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
+                >
+                  Staff Reporting web App (Live)
+                </a>
+              </div>
+              <a
+                href="https://srep.appmart.ng"
+                target="_blank"
+                className="rounded-full p-[8px] border-2 border-[#202942]"
+              >
+                <FaArrowRightLong />
+              </a>
+            </motion.div>
+          )}
+        </div>
+        <div
+          className="w-full lg:w-[400px] relative"
+          onMouseEnter={() => updateStateForKey("key8", true)}
+          onMouseLeave={() => updateStateForKey("key8", false)}
+        >
+          <img src={project8} alt="" srcset="" />
+          {workhover.key8 && (
+            <motion.div
+              className={` flex w-full justify-between items-center px-6 ${
+                workhover.key8
+                  ? "bg-white h-[60px] w-full absolute bottom-0"
+                  : "bg-white h-[60px] w-full absolute bottom-0"
+              }`}
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+              transition={{ duration: 0.5 }}
+            >
+              <div>
+                <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
+                  Vue Js and Node JS
+                </p>
+                <a
+                  href="https://gettcc.online"
+                  target="_blank"
+                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
+                >
+                  Get Tax Clearance Certificate (Live)
+                </a>
+              </div>
+              <a
+                href="https://gettcc.online"
+                target="_blank"
+                className="rounded-full p-[8px] border-2 border-[#202942]"
+              >
+                <FaArrowRightLong />
+              </a>
+            </motion.div>
+          )}
+        </div>
+        <div
+          className="w-full lg:w-[400px] relative"
+          onMouseEnter={() => updateStateForKey("key9", true)}
+          onMouseLeave={() => updateStateForKey("key9", false)}
+        >
+          <img src={project9} alt="" srcset="" />
+          {workhover.key9 && (
+            <motion.div
+              className={` flex w-full justify-between items-center px-6 ${
+                workhover.key9
+                  ? "bg-white h-[60px] w-full absolute bottom-0"
+                  : "bg-white h-[60px] w-full absolute bottom-0"
+              }`}
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+              transition={{ duration: 0.5 }}
+            >
+              <div>
+                <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
+                  React Js, Tailwind, Typescript.
+                </p>
+                <button className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]">
+                  Agrify Admin UI (Coming Soon)
                 </button>
               </div>
               <button

@@ -12,6 +12,9 @@ import project3 from "./images/project/portfolio.png";
 import project4 from "./images/project/agrify.png";
 import project5 from "./images/project/dhabs.png";
 import project6 from "./images/project/mmm.png";
+import project7 from "./images/project/srep.png";
+import project8 from "./images/project/gettcc.png";
+import project9 from "./images/project/agrifyadmin.png";
 import me from "./icons/work.png";
 import pricing from "./icons/pricing.webp";
 import node from "./icons/node.png";
@@ -40,6 +43,9 @@ export {
   project4,
   project5,
   project6,
+  project7,
+  project8,
+  project9,
   node,
   vue,
   react,

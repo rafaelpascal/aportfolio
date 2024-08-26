@@ -91,8 +91,8 @@ const About = () => {
               I Can Develop.
             </h2>
             <p className="text-[15px] text-[#666666] font-Manrop text-justify mt-8 leading-[25.5px] font-normal mb-4">
-              A skilled software developer with over 2 years of experience, I am
-              committed to delivering cost-effective and timely results while
+              A skilled software developer with over 3+ years of experience, I
+              am committed to delivering cost-effective and timely results while
               working within project specifications. With a strong passion for
               technology and a keen interest in learning, I am always looking
               for ways to grow and advance my skills. I am excited to be a part

@@ -5,7 +5,7 @@ import {
   Expertise,
   Work,
   // Pricing,
-  // Testimonies,
+  Testimonies,
   Hireme,
   Contact,
   Footer,
