@@ -4,13 +4,13 @@ import { motion, useAnimation } from "framer-motion";
 import {
   project1,
   project2,
-  project3,
-  project4,
   project5,
   project6,
   project7,
   project8,
   project9,
+  betconvert,
+  biopay,
 } from "../../assets";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -165,7 +165,7 @@ const Work = () => {
           onMouseEnter={() => updateStateForKey("key3", true)}
           onMouseLeave={() => updateStateForKey("key3", false)}
         >
-          <img src={project3} alt="" srcset="" />
+          <img src={betconvert} alt="" srcset="" />
           {workhover.key3 && (
             <motion.div
               className={` flex w-full justify-between items-center px-6 ${
@@ -180,18 +180,18 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  React JS
+                React js, Tailwind, framer motion.
                 </p>
                 <a
-                  href="https://mrraph.netlify.app"
+                  href="https://betconverts.swizel.co/"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Personal Portfolio (Live)
+                  Betconvert (Live)
                 </a>
               </div>
               <a
-                href="https://mrraph.netlify.app"
+                href="https://betconverts.swizel.co/"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
@@ -208,7 +208,7 @@ const Work = () => {
           onMouseEnter={() => updateStateForKey("key4", true)}
           onMouseLeave={() => updateStateForKey("key4", false)}
         >
-          <img src={project4} alt="" srcset="" />
+          <img src={biopay} alt="" srcset="" />
           {workhover.key4 && (
             <motion.div
               className={` flex w-full justify-between items-center px-6 ${
@@ -223,16 +223,18 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  React Native and Node JS
+                  React js, Tailwind, framer motion.
                 </p>
                 <a
+                  href="https://biopay.appmart.services/"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Agrify Mobile App (Coming Soon)
+                  Biopay (live)
                 </a>
               </div>
               <a
+                href="https://biopay.appmart.services/"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
@@ -413,18 +415,25 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  React Js, Tailwind, Typescript.
+                  React Js, Tailwind, Typescript and Node js
                 </p>
-                <button className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]">
-                  Agrify Admin UI (Coming Soon)
-                </button>
+                <a
+                  href="https://agrify-ui.vercel.app/"
+                  target="_blank"
+                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold text-left leading-[18px]"
+                >
+                  Agrify Admin UI Dev stage (Live)
+                </a>
               </div>
-              <button
-                disabled
+
+              <a
+
+                href="https://agrify-ui.vercel.app/"
+                target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
                 <FaArrowRightLong />
-              </button>
+              </a>
             </motion.div>
           )}
         </div>

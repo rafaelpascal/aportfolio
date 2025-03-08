@@ -27,6 +27,8 @@ import lineHire from "./icons/hireLine.png";
 import iconHire from "./icons/iconHire.png";
 import resume from "./files/raphaelResume.pdf";
 import typescript from "./icons/typescript.png";
+import betconvert from "./images/project/betconvert.png";
+import biopay from "./images/project/biopay.png";
 export {
   Hi,
   me,
@@ -57,4 +59,6 @@ export {
   iconHire,
   resume,
   typescript,
+  betconvert,
+  biopay,
 };
