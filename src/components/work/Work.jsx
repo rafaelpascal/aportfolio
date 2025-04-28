@@ -80,16 +80,16 @@ const Work = () => {
         </div>
       </div>
       <div className="flex justify-between items-center gap-6 flex-col sm:flex-row">
-        <div
+      <div
           className="w-full lg:w-[400px] relative"
-          onMouseEnter={() => updateStateForKey("key1", true)}
-          onMouseLeave={() => updateStateForKey("key1", false)}
+          onMouseEnter={() => updateStateForKey("key4", true)}
+          onMouseLeave={() => updateStateForKey("key4", false)}
         >
-          <img src={project1} alt="" srcset="" />
-          {workhover.key1 && (
+          <img src={biopay} alt="" srcset="" />
+          {workhover.key4 && (
             <motion.div
               className={` flex w-full justify-between items-center px-6 ${
-                workhover.key1
+                workhover.key4
                   ? "bg-white h-[60px] w-full absolute bottom-0"
                   : "bg-white h-[60px] w-full absolute bottom-0"
               }`}
@@ -100,58 +100,18 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  React and Node JS, Mongo DB.
+                  React js, Tailwind, framer motion.
                 </p>
                 <a
-                  href="https://amazonstores.netlify.app/"
+                  href="https://biopay.appmart.services/"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Ecommerce (Live)
+                  Biopay (live)
                 </a>
               </div>
               <a
-                href="https://amazonstores.netlify.app/"
-                target="_blank"
-                className="rounded-full p-[8px] border-2 border-[#202942]"
-              >
-                <FaArrowRightLong />
-              </a>
-            </motion.div>
-          )}
-        </div>
-        <div
-          className="w-full lg:w-[400px] relative"
-          onMouseEnter={() => updateStateForKey("key2", true)}
-          onMouseLeave={() => updateStateForKey("key2", false)}
-        >
-          <img src={project2} alt="" srcset="" />
-          {workhover.key2 && (
-            <motion.div
-              className={` flex w-full justify-between items-center px-6 ${
-                workhover.key2
-                  ? "bg-white h-[60px] w-full absolute bottom-0"
-                  : "bg-white h-[60px] w-full absolute bottom-0"
-              }`}
-              initial="hidden"
-              animate="visible"
-              variants={containerVariants}
-              transition={{ duration: 0.5 }}
-            >
-              <div>
-                <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  React Js and Node JS, MySQL DB, Typescript.
-                </p>
-                <a
-                  href="https://admin.nicetel.com.ng/"
-                  target="_blank"
-                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
-                >
-                  Nicetel Admin. (Live)
-                </a>
-              </div>
-              <a
-                href="https://admin.nicetel.com.ng/"
+                href="https://biopay.appmart.services/"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
@@ -200,19 +160,16 @@ const Work = () => {
             </motion.div>
           )}
         </div>
-      </div>
-
-      <div className="flex justify-between items-center gap-6 mt-6 flex-col sm:flex-row">
         <div
           className="w-full lg:w-[400px] relative"
-          onMouseEnter={() => updateStateForKey("key4", true)}
-          onMouseLeave={() => updateStateForKey("key4", false)}
+          onMouseEnter={() => updateStateForKey("key2", true)}
+          onMouseLeave={() => updateStateForKey("key2", false)}
         >
-          <img src={biopay} alt="" srcset="" />
-          {workhover.key4 && (
+          <img src={project2} alt="" srcset="" />
+          {workhover.key2 && (
             <motion.div
               className={` flex w-full justify-between items-center px-6 ${
-                workhover.key4
+                workhover.key2
                   ? "bg-white h-[60px] w-full absolute bottom-0"
                   : "bg-white h-[60px] w-full absolute bottom-0"
               }`}
@@ -223,18 +180,62 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  React js, Tailwind, framer motion.
+                  React Js and Node JS, MySQL DB, Typescript.
                 </p>
                 <a
-                  href="https://biopay.appmart.services/"
+                  href="https://admin.nicetel.com.ng/"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Biopay (live)
+                  Nicetel Admin. (Live)
                 </a>
               </div>
               <a
-                href="https://biopay.appmart.services/"
+                href="https://admin.nicetel.com.ng/"
+                target="_blank"
+                className="rounded-full p-[8px] border-2 border-[#202942]"
+              >
+                <FaArrowRightLong />
+              </a>
+            </motion.div>
+          )}
+        </div>
+
+      </div>
+
+      <div className="flex justify-between items-center gap-6 mt-6 flex-col sm:flex-row">
+      <div
+          className="w-full lg:w-[400px] relative"
+          onMouseEnter={() => updateStateForKey("key1", true)}
+          onMouseLeave={() => updateStateForKey("key1", false)}
+        >
+          <img src={project1} alt="" srcset="" />
+          {workhover.key1 && (
+            <motion.div
+              className={` flex w-full justify-between items-center px-6 ${
+                workhover.key1
+                  ? "bg-white h-[60px] w-full absolute bottom-0"
+                  : "bg-white h-[60px] w-full absolute bottom-0"
+              }`}
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+              transition={{ duration: 0.5 }}
+            >
+              <div>
+                <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
+                  React and Node JS, Mongo DB.
+                </p>
+                <a
+                  href="https://amazonstores.netlify.app/"
+                  target="_blank"
+                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
+                >
+                  Ecommerce (Live)
+                </a>
+              </div>
+              <a
+                href="https://amazonstores.netlify.app/"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
@@ -315,6 +316,48 @@ const Work = () => {
         </div>
       </div>
       <div className="flex justify-between items-center gap-6 mt-6 flex-col sm:flex-row">
+      <div
+          className="w-full lg:w-[400px] relative"
+          onMouseEnter={() => updateStateForKey("key9", true)}
+          onMouseLeave={() => updateStateForKey("key9", false)}
+        >
+          <img src={project9} alt="" srcset="" />
+          {workhover.key9 && (
+            <motion.div
+              className={` flex w-full justify-between items-center px-6 ${
+                workhover.key9
+                  ? "bg-white h-[60px] w-full absolute bottom-0"
+                  : "bg-white h-[60px] w-full absolute bottom-0"
+              }`}
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+              transition={{ duration: 0.5 }}
+            >
+              <div>
+                <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
+                  React Js, Tailwind, Typescript and Node js
+                </p>
+                <a
+                  href="https://agrify-ui.vercel.app/"
+                  target="_blank"
+                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold text-left leading-[18px]"
+                >
+                  Agrify Admin UI Dev stage (Live)
+                </a>
+              </div>
+
+              <a
+
+                href="https://agrify-ui.vercel.app/"
+                target="_blank"
+                className="rounded-full p-[8px] border-2 border-[#202942]"
+              >
+                <FaArrowRightLong />
+              </a>
+            </motion.div>
+          )}
+        </div>
         <div
           className="w-full lg:w-[400px] relative"
           onMouseEnter={() => updateStateForKey("key7", true)}
@@ -387,48 +430,6 @@ const Work = () => {
               </div>
               <a
                 href="https://gettcc.online"
-                target="_blank"
-                className="rounded-full p-[8px] border-2 border-[#202942]"
-              >
-                <FaArrowRightLong />
-              </a>
-            </motion.div>
-          )}
-        </div>
-        <div
-          className="w-full lg:w-[400px] relative"
-          onMouseEnter={() => updateStateForKey("key9", true)}
-          onMouseLeave={() => updateStateForKey("key9", false)}
-        >
-          <img src={project9} alt="" srcset="" />
-          {workhover.key9 && (
-            <motion.div
-              className={` flex w-full justify-between items-center px-6 ${
-                workhover.key9
-                  ? "bg-white h-[60px] w-full absolute bottom-0"
-                  : "bg-white h-[60px] w-full absolute bottom-0"
-              }`}
-              initial="hidden"
-              animate="visible"
-              variants={containerVariants}
-              transition={{ duration: 0.5 }}
-            >
-              <div>
-                <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  React Js, Tailwind, Typescript and Node js
-                </p>
-                <a
-                  href="https://agrify-ui.vercel.app/"
-                  target="_blank"
-                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold text-left leading-[18px]"
-                >
-                  Agrify Admin UI Dev stage (Live)
-                </a>
-              </div>
-
-              <a
-
-                href="https://agrify-ui.vercel.app/"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
