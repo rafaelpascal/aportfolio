@@ -4,7 +4,8 @@ import { myImage, resume } from "../../assets";
 import { FaLinkedin, FaTwitter, FaGithubAlt } from "react-icons/fa6";
 
 const Intro = () => {
-  const introsentence = "Hi, I'm Rafael".split("");
+  const introsentence = "Hi, My name is".split("");
+  const name = "Raphael Emehelu".split("");
 
   const transform = [
     "scale3d(1, 1, 1)",
@@ -61,21 +62,37 @@ const Intro = () => {
           <FaGithubAlt className="my-4" />
         </motion.a>
       </div>
-      <motion.div className="w-full lg:w-[50%] pl-5 lg:pl-[5rem]">
+      <motion.div className="w-full lg:w-[70%] pl-5 lg:pl-[5rem]">
         <h1 className="text-stroke-transparent text-[70px] lg:text-[104px] mt-[4rem] text-[#202942] uppercase font-bold">
           Welcome
         </h1>
+        <div>
+
         {introsentence.map((letter, index) => {
           return (
             <motion.h2
               key={index}
-              className="text-[40px] lg:text-[70px] leading-[72px] text-[#202942] inline-block font-Manrop font-bold cursor-pointer"
+              className="text-[40px] italic leading-[72px] text-[#202942] inline-block font-Manrop font-normal cursor-pointer"
               whileHover={{ transform }}
             >
               {letter === " " ? "\u00a0" : letter}
             </motion.h2>
           );
         })}
+        </div>
+        <div>
+        {name.map((letter, index) => {
+          return (
+            <motion.h2
+              key={index}
+              className="text-[40px] lg:text-[80px] leading-[72px] text-[#202942] inline-block font-Manrop font-bold cursor-pointer"
+              whileHover={{ transform }}
+            >
+              {letter === " " ? "\u00a0" : letter}
+            </motion.h2>
+          );
+        })}
+        </div>
         <div className="text-[24px] lg:text-[30px] font-bold leading-[36px] text-[#202942] mt-2 lg:mt-4">
           <p>Fullstack Developer</p>
           {/* <Typical
