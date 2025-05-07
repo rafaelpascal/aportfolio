@@ -27,7 +27,7 @@ const Intro = () => {
   return (
     <section
       id="#"
-      className="py-0 lg:max-w-7xl lg:mx-auto pt-[1rem] lg:pt-0 flex flex-col sm:flex-row lg:justify-between lg:items-start justify-center items-start"
+      className="py-0 lg:h-screen lg:max-w-7xl lg:mx-auto pt-[1rem] lg:pt-0 flex flex-col sm:flex-row lg:justify-between lg:items-start justify-center items-start"
     >
       <div className="fixed right-0 bg-transparent lg:bg-white ng px-5 py-2 top-[16rem] flex flex-col z-10">
         <motion.a
@@ -103,9 +103,9 @@ const Intro = () => {
           </motion.button>
         </a>
       </motion.div>
-      <div className="w-full lg:w-[50%] z-0  flex justify-end items-end">
+      {/* <div className="w-full lg:w-[50%] z-0  flex justify-end items-end">
         <img src={myImage} alt="" className="w-full lg:w-[630px]" />
-      </div>
+      </div> */}
     </section>
   );
 };
