@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { myImage, resume } from "../../assets";
+import {  resume } from "../../assets";
 import { FaLinkedin, FaTwitter, FaGithubAlt } from "react-icons/fa6";
 
 const Intro = () => {
