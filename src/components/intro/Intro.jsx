@@ -120,9 +120,9 @@ const Intro = () => {
           </motion.button>
         </a>
       </motion.div>
-      <div className="w-full lg:w-[50%] z-0  flex justify-end items-end">
+      {/* <div className="w-full lg:w-[50%] z-0  flex justify-end items-end">
         <img src={myImage} alt="" className="w-full lg:w-[630px]" />
-      </div>
+      </div> */}
     </section>
   );
 };
