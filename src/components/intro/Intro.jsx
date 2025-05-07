@@ -94,7 +94,7 @@ const Intro = () => {
         })}
         </div>
         <div className="text-[24px] lg:text-[30px] font-bold leading-[36px] text-[#202942] mt-2 lg:mt-4">
-          <p>Fullstack Developer</p>
+          <p>Fullstack Web Engineer</p>
           {/* <Typical
             steps={[
               "Frontend Developer",
