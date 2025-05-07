@@ -16,10 +16,6 @@ import project7 from "./images/project/srep.png";
 import project8 from "./images/project/gettcc.png";
 import project9 from "./images/project/agrifyadmin.png";
 import me from "./icons/work.png";
-import mynewimage from "./images/mynewimage.png";
-import profilepix2 from "./images/profilepix2-Photoroom.png";
-import profilepix3 from "./images/profilepix3.png";
-import profilepix4 from "./images/profilepix4.jpg";
 import pricing from "./icons/pricing.webp";
 import node from "./icons/node.png";
 import vue from "./icons/vue.png";
@@ -65,8 +61,4 @@ export {
   typescript,
   betconvert,
   biopay,
-  mynewimage,
-  profilepix2,
-  profilepix3,
-  profilepix4,
 };
