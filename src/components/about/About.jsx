@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { node, vue, react, javascript, me, typescript } from "../../assets";
+import { node, vue, nextjs, react, javascript, me, typescript } from "../../assets";
 import { motion } from "framer-motion";
 const About = () => {
   const [progress, setProgress] = useState({
@@ -34,7 +34,7 @@ const About = () => {
         ...prevProgress,
         key1: prevProgress < 90 ? prevProgress + 5 : 90,
         key2: prevProgress < 80 ? prevProgress + 10 : 80,
-        key3: prevProgress < 85 ? prevProgress + 8 : 85,
+        key3: prevProgress < 80 ? prevProgress + 10 : 95,
         key4: prevProgress < 70 ? prevProgress + 8 : 70,
         key5: prevProgress < 70 ? prevProgress + 8 : 70,
         key6: prevProgress < 80 ? prevProgress + 8 : 80,
@@ -302,6 +302,26 @@ const About = () => {
                     <img src={react} alt="" className="w-[50px]" />
                     <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
                       React JS
+                    </h2>
+                  </div>
+                  <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
+                    <h2 className="text-[16px] lg:text-[30px] font-bold font-Manrop leading-[24px] text-[#202942]">{`${progress.key3}%`}</h2>
+                    <div
+                      style={{
+                        borderRadius: "50px",
+                        width: `${progress.key3}%`,
+                        height: "10px",
+                        backgroundColor: "#FF014F",
+                        transition: "width 0.5s ease-in-out",
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="w-full flex flex-col sm:flex-row  justify-between gap-4 lg:gap-20 items-center">
+                  <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
+                    <img src={nextjs} alt="" className="w-[50px]" />
+                    <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
+                      Next JS
                     </h2>
                   </div>
                   <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">

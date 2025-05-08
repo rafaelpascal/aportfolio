@@ -15,9 +15,11 @@ import project6 from "./images/project/mmm.png";
 import project7 from "./images/project/srep.png";
 import project8 from "./images/project/gettcc.png";
 import project9 from "./images/project/agrifyadmin.png";
+import sommaire from "./images/project/sommaire.png";
 import me from "./icons/work.png";
 import pricing from "./icons/pricing.webp";
 import node from "./icons/node.png";
+import nextjs from "./icons/nextjs.jpg";
 import vue from "./icons/vue.png";
 import react from "./icons/react.png";
 import javascript from "./icons/javascript.png";
@@ -39,6 +41,7 @@ export {
   appDev,
   backend,
   recent,
+  nextjs,
   project1,
   project2,
   project3,
@@ -61,4 +64,5 @@ export {
   typescript,
   betconvert,
   biopay,
+  sommaire,
 };

@@ -6,7 +6,7 @@ import {
   project2,
   project5,
   project6,
-  project7,
+  sommaire,
   project8,
   project9,
   betconvert,
@@ -187,7 +187,7 @@ const Work = () => {
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Nicetel Admin. (Live)
+                  Nicetel Admin UI & Backend. (Live)
                 </a>
               </div>
               <a
@@ -224,7 +224,7 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  React and Node JS, Mongo DB.
+                  React Js and Node JS, Mongo DB.
                 </p>
                 <a
                   href="https://amazonstores.netlify.app/"
@@ -267,7 +267,7 @@ const Work = () => {
                   React JS, Tailwind
                 </p>
                 <button className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]">
-                  Personal Porfolio (Coming Soon)
+                  Personal Porfolio (Dev stage)
                 </button>
               </div>
               <button
@@ -302,7 +302,7 @@ const Work = () => {
                   Vue JS, Tailwind
                 </p>
                 <button className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]">
-                  Mind Store (Coming Soon)
+                  Mind Store (Dev stage)
                 </button>
               </div>
               <button
@@ -338,13 +338,11 @@ const Work = () => {
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
                   React Js, Tailwind, Typescript and Node js
                 </p>
-                <a
-                  href="https://agrify-ui.vercel.app/"
-                  target="_blank"
+                <div
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold text-left leading-[18px]"
                 >
-                  Agrify Admin UI Dev stage (Live)
-                </a>
+                  Agrify Admin UI & Backend (Dev stage)
+                </div>
               </div>
 
               <a
@@ -363,7 +361,7 @@ const Work = () => {
           onMouseEnter={() => updateStateForKey("key7", true)}
           onMouseLeave={() => updateStateForKey("key7", false)}
         >
-          <img src={project7} alt="" srcset="" />
+          <img src={sommaire} alt="" srcset="" />
           {workhover.key7 && (
             <motion.div
               className={` flex w-full justify-between items-center px-6 ${
@@ -378,23 +376,21 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  Vue Js and Node JS
+                  Saas, Next Js 15, Tailwind, Node js 
                 </p>
                 <a
-                  href="https://srep.appmart.ng"
+                  href=""
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Staff Reporting web App (Live)
+                  PDF Summarizer (Dev stage)
                 </a>
               </div>
-              <a
-                href="https://srep.appmart.ng"
-                target="_blank"
+              <div
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
                 <FaArrowRightLong />
-              </a>
+              </div>
             </motion.div>
           )}
         </div>
