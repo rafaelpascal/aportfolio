@@ -345,14 +345,12 @@ const Work = () => {
                 </div>
               </div>
 
-              <a
-
-                href="https://agrify-ui.vercel.app/"
-                target="_blank"
+              <button
+                disabled
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
                 <FaArrowRightLong />
-              </a>
+              </button>
             </motion.div>
           )}
         </div>
