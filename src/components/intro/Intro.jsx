@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {  resume } from "../../assets";
+import {  resume, NewImage } from "../../assets";
 import { FaLinkedin, FaTwitter, FaGithubAlt } from "react-icons/fa6";
 
 const Intro = () => {
@@ -28,7 +28,7 @@ const Intro = () => {
   return (
     <section
       id="#"
-      className="py-0 lg:h-screen lg:max-w-7xl lg:mx-auto pt-[1rem] lg:pt-0 flex flex-col sm:flex-row lg:justify-between lg:items-start justify-center items-start"
+      className="py-0 lg:h-[90vh]  lg:max-w-7xl lg:mx-auto pt-[1rem] lg:pt-0 flex flex-col sm:flex-row lg:justify-between lg:items-end pb-20 justify-center items-start"
     >
       <div className="fixed right-0 bg-transparent lg:bg-white ng px-5 py-2 top-[16rem] flex flex-col z-10">
         <motion.a
@@ -63,16 +63,16 @@ const Intro = () => {
         </motion.a>
       </div>
       <motion.div className="w-full lg:w-[70%] pl-5 lg:pl-[5rem]">
-        <h1 className="text-stroke-transparent text-[70px] lg:text-[104px] mt-[4rem] text-[#202942] uppercase font-bold">
+        {/* <h1 className="text-stroke-transparent text-[70px] lg:text-[104px] mt-[4rem] text-[#202942] uppercase font-bold">
           Welcome
-        </h1>
+        </h1> */}
         <div>
 
         {introsentence.map((letter, index) => {
           return (
             <motion.h2
               key={index}
-              className="text-[40px] italic leading-[72px] text-[#202942] inline-block font-Manrop font-normal cursor-pointer"
+              className="text-[40px] leading-[72px] text-[#202942] inline-block font-DancingScript font-normal cursor-pointer"
               whileHover={{ transform }}
             >
               {letter === " " ? "\u00a0" : letter}
@@ -120,9 +120,9 @@ const Intro = () => {
           </motion.button>
         </a>
       </motion.div>
-      {/* <div className="w-full lg:w-[50%] z-0  flex justify-end items-end">
-        <img src={myImage} alt="" className="w-full lg:w-[630px]" />
-      </div> */}
+      <div className="w-full lg:w-[40%] shadow-xl rounded-xl p-2 z-0  flex justify-end items-end">
+        <img src={NewImage} alt="" className="w-full rounded-xl border-4 border-gray-800 " />
+      </div>
     </section>
   );
 };

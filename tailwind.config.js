@@ -6,6 +6,7 @@ export default {
     fontFamily: {
       Manrop: ["Manrope", "sans-serif"],
       Lobster: ["Lobster", "sans-serif"],
+      DancingScript: ["Dancing Script", "cursive"],
     },
   },
   plugins: [],

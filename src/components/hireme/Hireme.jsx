@@ -23,7 +23,7 @@ const Hireme = () => {
       <img
         src={iconHire}
         alt=""
-        className="absolute w-[200px] lg:w-[350px] bottom-[-5rem] left-[-40px]"
+        className="absolute w-[200px] lg:w-[450px] bottom-[-7rem] left-[-40px]"
       />
       <div className="flex justify-center flex-col items-center">
         <h2 className="text-[30px] lg:text-[60px] font-bold text-center font-Manrop w-full lg:w-[500px] lg:leading-[66px] text-[#202942] ">

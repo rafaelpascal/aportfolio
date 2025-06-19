@@ -31,7 +31,9 @@ import resume from "./files/raphaelcv.pdf";
 import typescript from "./icons/typescript.png";
 import betconvert from "./images/project/betconvert.png";
 import biopay from "./images/project/biopay.png";
+import NewImage from "./images/image.jpg";
 export {
+  NewImage,
   Hi,
   me,
   myImage,
