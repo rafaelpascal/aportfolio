@@ -11,6 +11,8 @@ import {
   project9,
   betconvert,
   biopay,
+  revops,
+  faisure,
 } from "../../assets";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -80,7 +82,7 @@ const Work = () => {
         </div>
       </div>
       <div className="flex justify-between items-center gap-6 flex-col sm:flex-row">
-      <div
+        <div
           className="w-full lg:w-[400px] relative"
           onMouseEnter={() => updateStateForKey("key4", true)}
           onMouseLeave={() => updateStateForKey("key4", false)}
@@ -125,7 +127,7 @@ const Work = () => {
           onMouseEnter={() => updateStateForKey("key3", true)}
           onMouseLeave={() => updateStateForKey("key3", false)}
         >
-          <img src={betconvert} alt="" srcset="" />
+          <img src={revops} alt="" srcset="" />
           {workhover.key3 && (
             <motion.div
               className={` flex w-full justify-between items-center px-6 ${
@@ -140,18 +142,18 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                React js, Tailwind, framer motion.
+                  React js, Tailwind, Typescript, React Query.
                 </p>
                 <a
-                  href="https://betconverts.swizel.co/"
+                  href="https://pheonix.fairsurepay.com/"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Betconvert (Live)
+                  Revops (Fairsure) Bill Payment(Live)
                 </a>
               </div>
               <a
-                href="https://betconverts.swizel.co/"
+                href="https://pheonix.fairsurepay.com/"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
@@ -165,7 +167,7 @@ const Work = () => {
           onMouseEnter={() => updateStateForKey("key2", true)}
           onMouseLeave={() => updateStateForKey("key2", false)}
         >
-          <img src={project2} alt="" srcset="" />
+          <img src={faisure} alt="" srcset="" />
           {workhover.key2 && (
             <motion.div
               className={` flex w-full justify-between items-center px-6 ${
@@ -180,18 +182,18 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  React Js and Node JS, MySQL DB, Typescript.
+                  React Js and Tailwind CSS, Typescript.
                 </p>
                 <a
-                  href="https://admin.nicetel.com.ng/"
+                  href="https://fairsurepayment.com.ng/"
                   target="_blank"
                   className="text-[14px] text-[#FB0452] font-Manrop font-semibold leading-[18px]"
                 >
-                  Nicetel Admin UI & Backend. (Live)
+                  Fairsure Landing Page. (Live)
                 </a>
               </div>
               <a
-                href="https://admin.nicetel.com.ng/"
+                href="https://fairsurepayment.com.ng/"
                 target="_blank"
                 className="rounded-full p-[8px] border-2 border-[#202942]"
               >
@@ -200,11 +202,10 @@ const Work = () => {
             </motion.div>
           )}
         </div>
-
       </div>
 
       <div className="flex justify-between items-center gap-6 mt-6 flex-col sm:flex-row">
-      <div
+        <div
           className="w-full lg:w-[400px] relative"
           onMouseEnter={() => updateStateForKey("key1", true)}
           onMouseLeave={() => updateStateForKey("key1", false)}
@@ -316,7 +317,7 @@ const Work = () => {
         </div>
       </div>
       <div className="flex justify-between items-center gap-6 mt-6 flex-col sm:flex-row">
-      <div
+        <div
           className="w-full lg:w-[400px] relative"
           onMouseEnter={() => updateStateForKey("key9", true)}
           onMouseLeave={() => updateStateForKey("key9", false)}
@@ -338,9 +339,7 @@ const Work = () => {
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
                   React Js, Tailwind, Typescript and Node js
                 </p>
-                <div
-                  className="text-[14px] text-[#FB0452] font-Manrop font-semibold text-left leading-[18px]"
-                >
+                <div className="text-[14px] text-[#FB0452] font-Manrop font-semibold text-left leading-[18px]">
                   Agrify Admin UI & Backend (Dev stage)
                 </div>
               </div>
@@ -374,7 +373,7 @@ const Work = () => {
             >
               <div>
                 <p className="text-[12px] text-[#202942] font-Manrop font-semibold leading-[18px]">
-                  Saas, Next Js 15, Tailwind, Node js 
+                  Saas, Next Js 15, Tailwind, Node js
                 </p>
                 <a
                   href=""
@@ -384,9 +383,7 @@ const Work = () => {
                   PDF Summarizer (Dev stage)
                 </a>
               </div>
-              <div
-                className="rounded-full p-[8px] border-2 border-[#202942]"
-              >
+              <div className="rounded-full p-[8px] border-2 border-[#202942]">
                 <FaArrowRightLong />
               </div>
             </motion.div>
