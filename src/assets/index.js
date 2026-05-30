@@ -32,7 +32,6 @@ import typescript from "./icons/typescript.png";
 import betconvert from "./images/project/betconvert.png";
 import biopay from "./images/project/biopay.png";
 import NewImage from "./images/image.jpg";
-import RanchId from "./images/project/ranchid.png";
 import revops from "./images/project/revops.png";
 import faisure from "./images/project/faisure.png";
 
@@ -70,7 +69,6 @@ export {
   typescript,
   betconvert,
   biopay,
-  RanchId,
   sommaire,
   revops,
   faisure,
