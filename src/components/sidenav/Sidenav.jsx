@@ -7,327 +7,204 @@ import {
 } from "react-icons/io5";
 import { AiOutlineComment } from "react-icons/ai";
 import { FaRegUser } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { menu, close } from "../../assets";
+
+// Single source of truth for nav content — edit here, both layouts update.
+const NAV_ITEMS = [
+  { key: "home", href: "#", label: "Home", Icon: IoHomeOutline },
+  {
+    key: "service",
+    href: "#service",
+    label: "Services",
+    Icon: IoSettingsOutline,
+  },
+  { key: "work", href: "#work", label: "Portfolio", Icon: IoBriefcaseOutline },
+  { key: "about", href: "#about", label: "About", Icon: FaRegUser },
+  // {
+  //   key: "testimonies",
+  //   href: "#testimonies",
+  //   label: "Comments",
+  //   Icon: AiOutlineComment,
+  // },
+  {
+    key: "contact",
+    href: "#contact",
+    label: "Contact",
+    Icon: IoChatbubblesOutline,
+  },
+];
+
+const ACCENT = "#FF014F";
+const INK = "#202942";
 
 const Sidenav = () => {
   const [toggle, setToggle] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 840);
-  const [hover, setHover] = useState({
-    key1: false,
-    key2: false,
-    key3: false,
-    key4: false,
-    key5: false,
-    key6: false,
-  });
+  const [isSmallScreen, setIsSmallScreen] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 840 : false,
+  );
+  const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 840);
-    };
-
-    // Add event listener for window resize
+    const handleResize = () => setIsSmallScreen(window.innerWidth < 840);
     window.addEventListener("resize", handleResize);
-
-    // Remove event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const textVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const updateStateForKey = (key, newValue) => {
-    setHover((prevState) => ({
-      ...prevState,
-      [key]: newValue,
-    }));
+  const handleSelect = (key) => {
+    setActive(key);
+    if (isSmallScreen) setToggle(false);
   };
 
   return (
-    <div className="relative z-10 ">
+    <>
       {isSmallScreen ? (
-        <div className="fixed top-0 p-6 left-0 w-[100%]">
-          <button className="backdrop-filter backdrop-blur-xl p-[1rem] w-full rounded-3xl">
-            <img
-              src={toggle ? close : menu}
-              alt="Menu"
-              className="w-[30px]"
-              onClick={() => setToggle(!toggle)}
-            />
-            {toggle && (
-              <div
-                className={`${
-                  !toggle
-                    ? "hidden"
-                    : "flex justify-center items-center w-[300px] h-full p-4"
-                }`}
-              >
-                <div className="w-full">
-                  <a
-                    href="#"
-                    className="w-full my-4"
-                    onMouseEnter={() => updateStateForKey("key1", true)}
-                    onMouseLeave={() => updateStateForKey("key1", false)}
-                  >
-                    {hover.key1 ? (
-                      <motion.p
-                        className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                        initial="hidden"
-                        animate="visible"
-                        variants={textVariants}
-                        transition={{ duration: 0.5 }}
-                      >
-                        Home
-                      </motion.p>
-                    ) : (
-                      <IoHomeOutline className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                    )}
-                  </a>
-                  <a
-                    href="#service"
-                    className="w-full my-4"
-                    onMouseEnter={() => updateStateForKey("key2", true)}
-                    onMouseLeave={() => updateStateForKey("key2", false)}
-                  >
-                    {hover.key2 ? (
-                      <motion.p
-                        className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                        initial="hidden"
-                        animate="visible"
-                        variants={textVariants}
-                        transition={{ duration: 0.5 }}
-                      >
-                        Services
-                      </motion.p>
-                    ) : (
-                      <IoSettingsOutline className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                    )}
-                  </a>
-                  <a
-                    href="#work"
-                    className="w-full my-4"
-                    onMouseEnter={() => updateStateForKey("key3", true)}
-                    onMouseLeave={() => updateStateForKey("key3", false)}
-                  >
-                    {hover.key3 ? (
-                      <motion.p
-                        className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                        initial="hidden"
-                        animate="visible"
-                        variants={textVariants}
-                        transition={{ duration: 0.5 }}
-                      >
-                        Portfolio
-                      </motion.p>
-                    ) : (
-                      <IoBriefcaseOutline className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                    )}
-                  </a>
-                  <a
-                    href="#about"
-                    className="w-full my-4"
-                    onMouseEnter={() => updateStateForKey("key4", true)}
-                    onMouseLeave={() => updateStateForKey("key4", false)}
-                  >
-                    {hover.key4 ? (
-                      <motion.p
-                        className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                        initial="hidden"
-                        animate="visible"
-                        variants={textVariants}
-                        transition={{ duration: 0.5 }}
-                      >
-                        About
-                      </motion.p>
-                    ) : (
-                      <FaRegUser className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                    )}
-                  </a>
-                  <a
-                    href="#testimonies"
-                    className="w-full my-4"
-                    onMouseEnter={() => updateStateForKey("key5", true)}
-                    onMouseLeave={() => updateStateForKey("key5", false)}
-                  >
-                    {hover.key5 ? (
-                      <motion.p
-                        className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                        initial="hidden"
-                        animate="visible"
-                        variants={textVariants}
-                        transition={{ duration: 0.5 }}
-                      >
-                        Comments
-                      </motion.p>
-                    ) : (
-                      <AiOutlineComment className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                    )}
-                  </a>
-                  <a
-                    href="#contact"
-                    className="w-full my-4"
-                    onMouseEnter={() => updateStateForKey("key6", true)}
-                    onMouseLeave={() => updateStateForKey("key6", false)}
-                  >
-                    {hover.key6 ? (
-                      <motion.p
-                        className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                        initial="hidden"
-                        animate="visible"
-                        variants={textVariants}
-                        transition={{ duration: 0.5 }}
-                      >
-                        Contact
-                      </motion.p>
-                    ) : (
-                      <IoChatbubblesOutline className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                    )}
-                  </a>
-                </div>
-              </div>
-            )}
-          </button>
-        </div>
+        <MobileNav
+          toggle={toggle}
+          setToggle={setToggle}
+          active={active}
+          onSelect={handleSelect}
+        />
       ) : (
-        <div>
-          <div className="bg-white w-[100px] flex justify-between pb-[10rem] flex-col items-center h-[100vh] fixed text-black ">
-            <div className="bg-[#FF014F] w-full h-[90px] flex justify-center items-center">
-              <h1 className="text-[5rem] font-bold text-yellow-50 font-Lobster">
-                R
-              </h1>
-            </div>
-            <div className="w-full">
-              <a
-                href="#"
-                className="w-full my-4"
-                onMouseEnter={() => updateStateForKey("key1", true)}
-                onMouseLeave={() => updateStateForKey("key1", false)}
-              >
-                {hover.key1 ? (
-                  <motion.p
-                    className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                    initial="hidden"
-                    animate="visible"
-                    variants={textVariants}
-                    transition={{ duration: 0.5 }}
-                  >
-                    Home
-                  </motion.p>
-                ) : (
-                  <IoHomeOutline className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                )}
-              </a>
-              <a
-                href="#service"
-                className="w-full my-4"
-                onMouseEnter={() => updateStateForKey("key2", true)}
-                onMouseLeave={() => updateStateForKey("key2", false)}
-              >
-                {hover.key2 ? (
-                  <motion.p
-                    className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                    initial="hidden"
-                    animate="visible"
-                    variants={textVariants}
-                    transition={{ duration: 0.5 }}
-                  >
-                    Services
-                  </motion.p>
-                ) : (
-                  <IoSettingsOutline className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                )}
-              </a>
-              <a
-                href="#work"
-                className="w-full my-4"
-                onMouseEnter={() => updateStateForKey("key3", true)}
-                onMouseLeave={() => updateStateForKey("key3", false)}
-              >
-                {hover.key3 ? (
-                  <motion.p
-                    className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                    initial="hidden"
-                    animate="visible"
-                    variants={textVariants}
-                    transition={{ duration: 0.5 }}
-                  >
-                    Portfolio
-                  </motion.p>
-                ) : (
-                  <IoBriefcaseOutline className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                )}
-              </a>
-              <a
-                href="#about"
-                className="w-full my-4"
-                onMouseEnter={() => updateStateForKey("key4", true)}
-                onMouseLeave={() => updateStateForKey("key4", false)}
-              >
-                {hover.key4 ? (
-                  <motion.p
-                    className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                    initial="hidden"
-                    animate="visible"
-                    variants={textVariants}
-                    transition={{ duration: 0.5 }}
-                  >
-                    About
-                  </motion.p>
-                ) : (
-                  <FaRegUser className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                )}
-              </a>
-              <a
-                href="#testimonies"
-                className="w-full my-4"
-                onMouseEnter={() => updateStateForKey("key5", true)}
-                onMouseLeave={() => updateStateForKey("key5", false)}
-              >
-                {hover.key5 ? (
-                  <motion.p
-                    className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                    initial="hidden"
-                    animate="visible"
-                    variants={textVariants}
-                    transition={{ duration: 0.5 }}
-                  >
-                    Comments
-                  </motion.p>
-                ) : (
-                  <AiOutlineComment className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                )}
-              </a>
-              <a
-                href="#contact"
-                className="w-full my-4"
-                onMouseEnter={() => updateStateForKey("key6", true)}
-                onMouseLeave={() => updateStateForKey("key6", false)}
-              >
-                {hover.key6 ? (
-                  <motion.p
-                    className="text-[14px] font-bold text-[#202942] leading-[32px] font-Manrop py-4 w-full border-b-[2px] text-center uppercase border-[#E6F8F8] hover:text-[#FF014F]"
-                    initial="hidden"
-                    animate="visible"
-                    variants={textVariants}
-                    transition={{ duration: 0.5 }}
-                  >
-                    Contact
-                  </motion.p>
-                ) : (
-                  <IoChatbubblesOutline className="text-[4rem] text-[#202942] font-normal w-full border-b-[2px] py-4 border-[#E6F8F8] hover:text-[#FF014F]" />
-                )}
-              </a>
-            </div>
-          </div>
-        </div>
+        <DesktopNav active={active} onSelect={handleSelect} />
       )}
-    </div>
+    </>
   );
 };
+
+/* ---------------------------- Desktop rail ---------------------------- */
+
+const DesktopNav = ({ active, onSelect }) => (
+  <nav
+    aria-label="Primary"
+    className="fixed left-0 top-0 z-20 flex h-screen w-[92px] flex-col items-center bg-white shadow-[4px_0_24px_rgba(32,41,66,0.06)]"
+  >
+    <div
+      className="flex h-[88px] w-full items-center justify-center"
+      style={{ backgroundColor: ACCENT }}
+    >
+      <span className="font-Lobster text-4xl text-white">R</span>
+    </div>
+
+    <ul className="mt-6 flex w-full flex-1 flex-col items-center gap-1">
+      {NAV_ITEMS.map((item) => (
+        <NavRailItem
+          key={item.key}
+          item={item}
+          isActive={active === item.key}
+          onSelect={onSelect}
+        />
+      ))}
+    </ul>
+  </nav>
+);
+
+const NavRailItem = ({ item, isActive, onSelect }) => {
+  const [hovered, setHovered] = useState(false);
+  const { Icon, label, href, key } = item;
+
+  return (
+    <li className="group relative w-full px-3">
+      <a
+        href={href}
+        onClick={() => onSelect(key)}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className="relative flex h-14 w-full items-center justify-center rounded-2xl transition-colors duration-200"
+        style={{
+          backgroundColor: isActive ? "rgba(255,1,79,0.08)" : "transparent",
+        }}
+      >
+        {/* active indicator */}
+        {isActive && (
+          <motion.span
+            layoutId="active-pill"
+            className="absolute left-0 h-6 w-[3px] rounded-full"
+            style={{ backgroundColor: ACCENT }}
+            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          />
+        )}
+
+        <Icon
+          size={22}
+          style={{ color: isActive ? ACCENT : INK }}
+          className="transition-transform duration-200 group-hover:scale-110"
+        />
+
+        {/* label flyout, doesn't reflow the rail */}
+        <AnimatePresence>
+          {hovered && (
+            <motion.span
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -8 }}
+              transition={{ duration: 0.15 }}
+              className="pointer-events-none absolute left-[calc(100%+12px)] whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-white shadow-lg"
+              style={{ backgroundColor: INK }}
+            >
+              {label}
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </a>
+    </li>
+  );
+};
+
+/* ----------------------------- Mobile nav ------------------------------ */
+
+const MobileNav = ({ toggle, setToggle, active, onSelect }) => (
+  <div className="fixed left-0 top-0 z-20 w-full p-4">
+    <div className="flex items-center justify-between rounded-2xl bg-white/90 px-4 py-3 shadow-[0_4px_24px_rgba(32,41,66,0.08)] backdrop-blur-xl">
+      <span className="font-Lobster text-2xl" style={{ color: ACCENT }}>
+        R
+      </span>
+      <button
+        aria-label={toggle ? "Close menu" : "Open menu"}
+        aria-expanded={toggle}
+        onClick={() => setToggle((t) => !t)}
+        className="rounded-full p-1"
+      >
+        <img src={toggle ? close : menu} alt="" className="w-6" />
+      </button>
+    </div>
+
+    <AnimatePresence>
+      {toggle && (
+        <motion.ul
+          initial={{ opacity: 0, y: -12, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -12, scale: 0.98 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+          className="mt-3 overflow-hidden rounded-2xl bg-white/95 p-2 shadow-[0_8px_32px_rgba(32,41,66,0.12)] backdrop-blur-xl"
+        >
+          {NAV_ITEMS.map(({ key, href, label, Icon }) => {
+            const isActive = active === key;
+            return (
+              <li key={key}>
+                <a
+                  href={href}
+                  onClick={() => onSelect(key)}
+                  className="flex items-center gap-3 rounded-xl px-4 py-3 transition-colors duration-150"
+                  style={{
+                    backgroundColor: isActive
+                      ? "rgba(255,1,79,0.08)"
+                      : "transparent",
+                    color: isActive ? ACCENT : INK,
+                  }}
+                >
+                  <Icon size={20} />
+                  <span className="text-sm font-semibold uppercase tracking-wide">
+                    {label}
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </motion.ul>
+      )}
+    </AnimatePresence>
+  </div>
+);
 
 export default Sidenav;

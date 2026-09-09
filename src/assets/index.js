@@ -34,6 +34,10 @@ import biopay from "./images/project/biopay.png";
 import NewImage from "./images/image.jpg";
 import revops from "./images/project/revops.png";
 import faisure from "./images/project/faisure.png";
+import tvacs from "./images/project/tvacs.png";
+import faisurepay from "./images/project/Fairsurepay.jpeg";
+import Maihelt from "./images/project/maihelt.png";
+import Mercies from "./images/project/mercies.png";
 
 export {
   NewImage,
@@ -72,4 +76,8 @@ export {
   sommaire,
   revops,
   faisure,
+  tvacs,
+  faisurepay,
+  Maihelt,
+  Mercies,
 };

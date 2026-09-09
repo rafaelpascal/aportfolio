@@ -1,469 +1,295 @@
 import { useState, useEffect } from "react";
-import { node, vue, nextjs, react, javascript, me, typescript } from "../../assets";
-import { motion } from "framer-motion";
+import {
+  node,
+  vue,
+  nextjs,
+  react,
+  javascript,
+  me,
+  typescript,
+} from "../../assets";
+import { motion, AnimatePresence } from "framer-motion";
+
+const INK = "#202942";
+const ACCENT = "#FF014F";
+const MUTED = "#666666";
+
+/* ------------------------------- Data ---------------------------------- */
+
+const BIO_FIELDS = [
+  { label: "Name", value: "Emehelu Raphael O." },
+  { label: "Area of Expertise", value: "Web Development" },
+  { label: "Nationality", value: "Nigeria" },
+  { label: "Course of Study", value: "Computer Science" },
+  { label: "Education", value: "Higher National Diploma" },
+  { label: "Address", value: "Prince and Princess Estate, FCT Abuja" },
+  { label: "Years of Experience", value: "4+" },
+  { label: "Preferred Language", value: "English" },
+];
+
+const SKILLS = [
+  { key: "javascript", icon: javascript, label: "JavaScript", target: 90 },
+  { key: "typescript", icon: typescript, label: "TypeScript", target: 80 },
+  { key: "node", icon: node, label: "Node JS", target: 80 },
+  { key: "react", icon: react, label: "React JS", target: 95 },
+  { key: "nextjs", icon: nextjs, label: "Next JS", target: 85 },
+  { key: "vue", icon: vue, label: "Vue JS", target: 70 },
+  { key: "reactNative", icon: react, label: "React Native", target: 90 },
+];
+
+const DEGREES = [
+  {
+    title: "Computer Science",
+    place: "Convenant Polytechnic",
+    period: "2012 – 2014",
+  },
+  {
+    title: "Computer Science",
+    place: "Federal Polytechnic Oko",
+    period: "2014 – 2016",
+  },
+  { title: "Web Development", place: "Devamplify", period: "2019 – 2020" },
+];
+
+const CERTIFICATIONS = [
+  { title: "JavaScript Basics", place: "Codedamn", period: "2022" },
+  { title: "JavaScript: ES6", place: "Pirplei", period: "2022" },
+  { title: "Node JS", place: "Codedamn", period: "2020" },
+];
+
+const TABS = [
+  { key: "bio", label: "Biography", index: "01" },
+  { key: "skills", label: "Skills", index: "02" },
+  { key: "education", label: "Education", index: "03" },
+];
+
+/* ------------------------------ Component ------------------------------- */
+
 const About = () => {
-  const [progress, setProgress] = useState({
-    key1: 0,
-    key2: 0,
-    key3: 0,
-    key4: 0,
-    key5: 0,
-    key6: 0,
-  });
-  const [skills, setSkills] = useState({
-    key1: true,
-    key2: false,
-    key3: false,
-  });
-  const boxVariants = {
-    initial: { backgroundColor: "#fff", color: "#202942" },
-    hover: { backgroundColor: "#202942", color: "#fff" },
-    active: { backgroundColor: "#202942", color: "#fff" },
-    Inactive: { backgroundColor: "#fff", color: "#202942" },
-  };
-  const updateStateForKey = (key, newValue) => {
-    setSkills((prevState) => ({
-      ...prevState,
-      [key]: newValue,
-    }));
-  };
+  const [activeTab, setActiveTab] = useState("bio");
+  const [progress, setProgress] = useState(
+    Object.fromEntries(SKILLS.map((s) => [s.key, 0])),
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setProgress((prevProgress) => ({
-        ...prevProgress,
-        key1: prevProgress < 90 ? prevProgress + 5 : 90,
-        key2: prevProgress < 80 ? prevProgress + 10 : 80,
-        key3: prevProgress < 80 ? prevProgress + 10 : 95,
-        key4: prevProgress < 70 ? prevProgress + 8 : 70,
-        key5: prevProgress < 70 ? prevProgress + 8 : 70,
-        key6: prevProgress < 80 ? prevProgress + 8 : 80,
-      }));
-    }, 1000);
+      setProgress((prev) => {
+        const next = { ...prev };
+        let stillMoving = false;
+        SKILLS.forEach(({ key, target }) => {
+          if (prev[key] < target) {
+            next[key] = Math.min(prev[key] + 5, target);
+            stillMoving = true;
+          }
+        });
+        if (!stillMoving) clearInterval(interval);
+        return next;
+      });
+    }, 150);
     return () => clearInterval(interval);
   }, []);
 
-  const handleBioToggle = () => {
-    setSkills({
-      key1: true,
-      key2: false,
-      key3: false,
-    });
-  };
-
-  const handleSkillsToggle = () => {
-    setSkills({
-      key1: false,
-      key2: true,
-      key3: false,
-    });
-  };
-
-  const handleEduToggle = () => {
-    setSkills({
-      key1: false,
-      key2: false,
-      key3: true,
-    });
-  };
   return (
     <section
       id="about"
-      className="py-10 lg:max-w-6xl mx-auto px-[2rem] mt-[4rem] relative"
+      className="relative mx-auto mt-16 px-8 py-10 lg:max-w-6xl"
     >
-      {/* <div className="w-full lg:w-[40%] bg-[#FB0846] opacity-25 h-[440px] rounded-full left-[-5px] bottom-[5px] absolute z-10"></div> */}
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 z-0 mb-[15rem] lg:mb-[5rem]">
-        <div className="w-full lg:w-[40%] bg-transparent h-[440px] rounded-full z-0">
+      {/* ------------------------------ Intro ------------------------------ */}
+      <div className="z-0 mb-24 flex flex-col items-center justify-between gap-10 sm:flex-row lg:mb-20">
+        <div className="h-[440px] w-full rounded-full bg-transparent lg:w-[40%]">
           <motion.img
             src={me}
-            alt=""
+            alt="Portrait"
             className="w-full"
             whileHover={{ x: 20 }}
             transition={{ type: "spring", stiffness: 100, damping: 10 }}
           />
         </div>
         <div className="w-full lg:w-[50%]">
-          <div className="mb-[5rem]">
-            <p className="text-[20px] font-bold leading-[24px] text-left mb-4 font-Manrop bg-clip-text text-transparent bg-gradient-to-r from-[#419BDA] to-[#FB0452]">
-              ABOUT ME
-            </p>
-            <h2 className="w-full lg:w-[300px] text-[36px] font-extrabold leading-[43.2px] text-[#202942] font-Manrop">
-              I Can Develop.
-            </h2>
-            <p className="text-[15px] text-[#666666] font-Manrop text-justify mt-8 leading-[25.5px] font-normal mb-4">
-              A skilled software developer with over 3+ years of experience, I
-              am committed to delivering cost-effective and timely results while
-              working within project specifications. With a strong passion for
-              technology and a keen interest in learning, I am always looking
-              for ways to grow and advance my skills. I am excited to be a part
-              of a team that is dedicated to creating innovative and impactful
-              products, and I am confident in my ability to make a positive
-              contribution to any project.
-            </p>
+          <p className="mb-4 bg-gradient-to-r from-[#419BDA] to-[#FB0452] bg-clip-text font-Manrop text-[20px] font-bold leading-6 text-transparent">
+            ABOUT ME
+          </p>
+          <h2 className="w-full font-Manrop text-[36px] font-extrabold leading-[43.2px] text-[#202942] lg:w-[300px]">
+            I Can Develop.
+          </h2>
+          <p className="mb-4 mt-8 font-Manrop text-[15px] font-normal leading-[25.5px] text-[#666666]">
+            A skilled software developer with over 3+ years of experience, I am
+            committed to delivering cost-effective and timely results while
+            working within project specifications. With a strong passion for
+            technology and a keen interest in learning, I am always looking for
+            ways to grow and advance my skills. I am excited to be a part of a
+            team that is dedicated to creating innovative and impactful
+            products, and I am confident in my ability to make a positive
+            contribution to any project.
+          </p>
 
-            <div className="flex justify-between items-start flex-col gap-4 mt-11">
-              <div className="flex justify-start gap-4 lg:gap-20 items-center">
-                <img src={node} alt="" className="w-[70px]" />
-                <div>
-                  <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                    Full stack Developer
-                  </h2>
-                  <p className="text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] mb-4 font-semibold">
-                    Appmart Integrated Limited.
-                  </p>
-                </div>
-              </div>
+          <div className="mt-11 flex items-center gap-4 lg:gap-20">
+            <img src={node} alt="" className="w-[70px]" />
+            <div>
+              <h2 className="font-Manrop text-[20px] font-bold leading-6 text-[#202942]">
+                Full Stack Developer
+              </h2>
+              <p className="font-Manrop text-[15px] font-semibold leading-[25.5px] text-[#666666]">
+                Appmart Integrated Limited
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <div
-        style={{
-          width: "100%",
-          background: "linear-gradient(to right, #FCF8E4, #F8FFFF)",
-        }}
-        animate={{ background: "linear-gradient(to right, #FCF8E4, #F8FFFF)" }}
-        className="w-full relative border-2 border-[#fff] flex justify-center items-center flex-col"
-      >
-        <div className="w-full lg:w-[80%] bg-transparent lg:bg-white gap-4 lg:gap-6 p-2 absolute top-[-15rem] lg:top-[-2rem] rounded-full flex flex-col sm:flex-row justify-between items-center">
-          <motion.button
-            className="text-[18px] font-bold font-Manrop leading-[24px]  w-full py-[15px] rounded-full"
-            initial="initial"
-            whileHover="hover"
-            animate={skills.key1 ? "active" : "inactive"}
-            variants={boxVariants}
-            transition={{ duration: 0.5 }}
-            onClick={handleBioToggle}
-          >
-            Biography - 01
-          </motion.button>
-          <motion.button
-            className="text-[18px] font-bold font-Manrop leading-[24px] w-full py-[15px] rounded-full"
-            initial="initial"
-            whileHover="hover"
-            animate={skills.key2 ? "active" : "inactive"}
-            variants={boxVariants}
-            transition={{ duration: 0.5 }}
-            onClick={handleSkillsToggle}
-          >
-            Skills - 01
-          </motion.button>
-          <motion.button
-            className="text-[18px] font-bold font-Manrop leading-[24px] w-full py-[15px] rounded-full"
-            initial="initial"
-            whileHover="hover"
-            animate={skills.key3 ? "active" : "inactive"}
-            variants={boxVariants}
-            transition={{ duration: 0.5 }}
-            onClick={handleEduToggle}
-          >
-            Education - 01
-          </motion.button>
+
+      {/* ---------------------------- Tabbed panel --------------------------- */}
+      <div className="relative w-full rounded-3xl bg-gradient-to-r from-[#FCF8E4] to-[#F8FFFF] pt-16 lg:pt-8">
+        {/* Tab bar */}
+        <div className="absolute left-1/2 top-[-3.5rem] flex w-[92%] -translate-x-1/2 gap-2 rounded-full bg-white p-2 shadow-[0_8px_30px_rgba(32,41,66,0.1)] sm:w-[80%] lg:top-[-2rem]">
+          {TABS.map((tab) => {
+            const isActive = activeTab === tab.key;
+            return (
+              <button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className="relative flex-1 rounded-full py-[15px] font-Manrop text-[15px] font-bold leading-6 sm:text-[18px]"
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="tab-pill"
+                    className="absolute inset-0 rounded-full"
+                    style={{ backgroundColor: INK }}
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                  />
+                )}
+                <span
+                  className="relative z-10 transition-colors duration-200"
+                  style={{ color: isActive ? "#fff" : INK }}
+                >
+                  {tab.label} - {tab.index}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
-        {skills.key1 && (
-          <div className="flex flex-col sm:flex-row w-full justify-between gap-20 items-center lg:px-[6rem] py-[2rem] lg:py-[4rem]">
-            <div className="w-full px-4 lg:w-[50%]">
-              <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
-                <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Name
-                </h2>
-                <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  Emehelu Raphael O.
-                </p>
-              </div>
-              <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
-                <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Area of Expertise
-                </h2>
-                <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  Web Development
-                </p>
-              </div>
-              <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
-                <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Nationality
-                </h2>
-                <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  Nigeria
-                </p>
-              </div>
-              <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
-                <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Course of Study
-                </h2>
-                <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  Computer Science
-                </p>
-              </div>
-            </div>
-            <div className="w-full px-4 lg:w-[50%]">
-              <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
-                <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Education
-                </h2>
-                <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  Higher National Deploma
-                </p>
-              </div>
-              <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
-                <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Address
-                </h2>
-                <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  Prince and Princess Estate, FCT Abuja
-                </p>
-              </div>
-              <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
-                <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Years of Experience
-                </h2>
-                <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  3 +
-                </p>
-              </div>
-              <div className="flex justify-between items-center border-b-[1.5px] py-3 border-[#666666]">
-                <h2 className="text-[14px] lg:text-[18px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Preferred Language
-                </h2>
-                <p className="text-[12px] lg:text-[15px] text-[#666666] font-Manrop text-justify leading-[25.5px] font-semibold">
-                  English
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-        {skills.key2 && (
-          <div className="flex w-[100%] justify-between gap-20 items-center lg:px-[6rem] py-[2rem] lg:py-[4rem]">
-            <div className="w-full flex flex-col sm:flex-row justify-between items-center">
-              <div className="w-full flex justify-between items-start flex-col gap-4 mt-11">
-                <div className="w-full flex flex-col sm:flex-row justify-between gap-4 lg:gap-20 items-center">
-                  <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
-                    <img src={javascript} alt="" className="w-[50px]" />
-                    <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                      Javascript
-                    </h2>
+        <div className="px-4 py-8 lg:px-24 lg:py-16">
+          <AnimatePresence mode="wait">
+            {activeTab === "bio" && (
+              <motion.div
+                key="bio"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25 }}
+                className="grid w-full grid-cols-1 gap-x-20 sm:grid-cols-2"
+              >
+                {BIO_FIELDS.map((field) => (
+                  <div
+                    key={field.label}
+                    className="flex items-center justify-between border-b-[1.5px] border-[#66666633] py-3"
+                  >
+                    <h3 className="font-Manrop text-[14px] font-bold leading-6 text-[#202942] lg:text-[18px]">
+                      {field.label}
+                    </h3>
+                    <p className="font-Manrop text-[12px] font-semibold leading-[25.5px] text-[#666666] lg:text-[15px]">
+                      {field.value}
+                    </p>
                   </div>
-                  <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
-                    <h2 className="text-[16px] lg:text-[30px] font-bold font-Manrop leading-[24px] text-[#202942]">{`${progress.key1}%`}</h2>
-                    <div
-                      style={{
-                        borderRadius: "50px",
-                        width: `${progress.key1}%`,
-                        height: "10px",
-                        backgroundColor: "#FF014F",
-                        transition: "width 0.5s ease-in-out",
-                      }}
-                    />
+                ))}
+              </motion.div>
+            )}
+
+            {activeTab === "skills" && (
+              <motion.div
+                key="skills"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25 }}
+                className="flex w-full flex-col gap-6"
+              >
+                {SKILLS.map(({ key, icon, label, target }) => (
+                  <div
+                    key={key}
+                    className="flex flex-col items-center gap-4 sm:flex-row sm:gap-12"
+                  >
+                    <div className="flex w-full items-center gap-6 sm:w-[45%]">
+                      <img src={icon} alt="" className="w-[50px]" />
+                      <h3 className="font-Manrop text-[18px] font-bold leading-6 text-[#202942] sm:text-[20px]">
+                        {label}
+                      </h3>
+                    </div>
+                    <div className="flex w-full items-center gap-4 sm:w-[55%]">
+                      <span className="w-12 shrink-0 font-Manrop text-[16px] font-bold leading-6 text-[#202942] sm:w-16 sm:text-[24px]">
+                        {progress[key]}%
+                      </span>
+                      <div className="h-[10px] w-full overflow-hidden rounded-full bg-[#20294214]">
+                        <motion.div
+                          className="h-full rounded-full"
+                          style={{ backgroundColor: ACCENT }}
+                          initial={{ width: 0 }}
+                          animate={{ width: `${progress[key]}%` }}
+                          transition={{ duration: 0.3, ease: "easeOut" }}
+                        />
+                      </div>
+                    </div>
+                    <span className="hidden text-[13px] text-[#66666699] sm:block">
+                      /{target}%
+                    </span>
                   </div>
-                </div>
-                <div className="w-full flex flex-col sm:flex-row justify-between gap-4 lg:gap-20 items-center">
-                  <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
-                    <img src={typescript} alt="" className="w-[50px]" />
-                    <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                      Typescript
-                    </h2>
-                  </div>
-                  <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
-                    <h2 className="text-[16px] lg:text-[30px] font-bold font-Manrop leading-[24px] text-[#202942]">{`${progress.key1}%`}</h2>
-                    <div
-                      style={{
-                        borderRadius: "50px",
-                        width: `${progress.key6}%`,
-                        height: "10px",
-                        backgroundColor: "#FF014F",
-                        transition: "width 0.5s ease-in-out",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="w-full flex flex-col sm:flex-row  justify-between gap-4 lg:gap-20 items-center">
-                  <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
-                    <img src={node} alt="" className="w-[50px]" />
-                    <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                      Node JS
-                    </h2>
-                  </div>
-                  <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
-                    <h2 className="text-[16px] lg:text-[30px] font-bold font-Manrop leading-[24px] text-[#202942]">{`${progress.key2}%`}</h2>
-                    <div
-                      style={{
-                        borderRadius: "50px",
-                        width: `${progress.key2}%`,
-                        height: "10px",
-                        backgroundColor: "#FF014F",
-                        transition: "width 0.5s ease-in-out",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="w-full flex flex-col sm:flex-row  justify-between gap-4 lg:gap-20 items-center">
-                  <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
-                    <img src={react} alt="" className="w-[50px]" />
-                    <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                      React JS
-                    </h2>
-                  </div>
-                  <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
-                    <h2 className="text-[16px] lg:text-[30px] font-bold font-Manrop leading-[24px] text-[#202942]">{`${progress.key3}%`}</h2>
-                    <div
-                      style={{
-                        borderRadius: "50px",
-                        width: `${progress.key3}%`,
-                        height: "10px",
-                        backgroundColor: "#FF014F",
-                        transition: "width 0.5s ease-in-out",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="w-full flex flex-col sm:flex-row  justify-between gap-4 lg:gap-20 items-center">
-                  <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
-                    <img src={nextjs} alt="" className="w-[50px]" />
-                    <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                      Next JS
-                    </h2>
-                  </div>
-                  <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
-                    <h2 className="text-[16px] lg:text-[30px] font-bold font-Manrop leading-[24px] text-[#202942]">{`${progress.key3}%`}</h2>
-                    <div
-                      style={{
-                        borderRadius: "50px",
-                        width: `${progress.key3}%`,
-                        height: "10px",
-                        backgroundColor: "#FF014F",
-                        transition: "width 0.5s ease-in-out",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="w-full flex flex-col sm:flex-row justify-between gap-4 lg:gap-20 items-center">
-                  <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
-                    <img src={vue} alt="" className="w-[50px]" />
-                    <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                      Vue JS
-                    </h2>
-                  </div>
-                  <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
-                    <h2 className="text-[16px] lg:text-[30px] font-bold font-Manrop leading-[24px] text-[#202942]">{`${progress.key4}%`}</h2>
-                    <div
-                      style={{
-                        borderRadius: "50px",
-                        width: `${progress.key4}%`,
-                        height: "10px",
-                        backgroundColor: "#FF014F",
-                        transition: "width 0.5s ease-in-out",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="w-full flex flex-col sm:flex-row justify-between gap-4 lg:gap-20 items-center">
-                  <div className="flex w-full lg:w-[50%] flex-col sm:flex-row justify-start gap-6 lg:gap-12 items-center">
-                    <img src={react} alt="" className="w-[50px]" />
-                    <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                      Mobile App with React Native
-                    </h2>
-                  </div>
-                  <div className="w-full lg:w-[50%] flex flex-col sm:flex-row justify-start gap-4 items-center">
-                    <h2 className="text-[16px] lg:text-[30px] font-bold font-Manrop leading-[24px] text-[#202942]">{`${progress.key4}%`}</h2>
-                    <div
-                      style={{
-                        borderRadius: "50px",
-                        width: `${progress.key5}%`,
-                        height: "10px",
-                        backgroundColor: "#FF014F",
-                        transition: "width 0.5s ease-in-out",
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-        {skills.key3 && (
-          <div className="flex w-full flex-col justify-between gap-20 items-center lg:px-[6rem] py-[2rem] lg:py-[4rem]">
-            <div className="w-full flex justify-between mt-10 items-center gap-8 flex-col sm:flex-row">
-              <div className="w-full lg:w-[30%] border-l-[2px] border-[#FF014F] relative px-3 lg:px-6">
-                <div className="h-[20px] w-[20px] rounded-full border-4 absolute top-[-16px] left-[-11px] border-[#FF014F]"></div>
-                <h2 className="text-[20px] font-bold font-Manrop capitalize leading-[24px] text-[#202942]">
-                  Computer Science
-                </h2>
-                <p className="text-[14px] font-semibold capitalize my-4 font-Manrop leading-[24px] text-[#202942]">
-                  CONVENANT POLYTECHNIC
-                </p>
-                <h2 className="bg-[#FF014F] text-white mb-4 font-bold text-[15px] w-[50%] p-2">
-                  2012 - 2014
-                </h2>
-              </div>
-              <div className="w-full lg:w-[30%] border-l-[2px] border-[#FF014F] relative px-3 lg:px-6">
-                <div className="h-[20px] w-[20px] rounded-full border-4 absolute top-[-16px] left-[-11px] border-[#FF014F]"></div>
-                <h2 className="text-[20px] font-bold capitalize font-Manrop leading-[24px] text-[#202942]">
-                  Computer Science.
-                </h2>
-                <p className="text-[14px] font-semibold capitalize my-4 font-Manrop leading-[24px] text-[#202942]">
-                  FEDERAL POLYTECHNIC OKO
-                </p>
-                <h2 className="bg-[#FF014F] text-white mb-4 font-bold text-[15px] w-[50%] p-2">
-                  2014 - 2016
-                </h2>
-              </div>
-              <div className="w-full lg:w-[30%] border-l-[2px] border-[#FF014F] relative px-3 lg:px-6">
-                <div className="h-[20px] w-[20px] rounded-full border-4 absolute top-[-16px] left-[-11px] border-[#FF014F]"></div>
-                <h2 className="text-[20px] font-bold capitalize font-Manrop leading-[24px] text-[#202942]">
-                  Web Development.
-                </h2>
-                <p className="text-[14px] font-semibold capitalize my-4 font-Manrop leading-[24px] text-[#202942]">
-                  DEVAMPLIFY
-                </p>
-                <h2 className="bg-[#FF014F] text-white mb-4 font-bold text-[15px] w-[50%] p-2">
-                  2019 - 2020
-                </h2>
-              </div>
-            </div>
-            <div className="w-full flex justify-between items-center gap-8 flex-col sm:flex-row">
-              <div className="w-full lg:w-[50%] border-l-[2px] border-[#FF014F] relative px-3 lg:px-6">
-                <div className="h-[20px] w-[20px] rounded-full border-4 absolute top-[-16px] left-[-11px] border-[#FF014F]"></div>
-                <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  JavaScript Basics.
-                </h2>
-                <p className="text-[14px] font-semibold my-4 font-Manrop leading-[24px] text-[#202942]">
-                  CODEDAMN
-                </p>
-                <h2 className="bg-[#FF014F] text-white mb-4 font-bold text-[15px] w-[50%] p-2">
-                  2022
-                </h2>
-              </div>
-              <div className="w-full lg:w-[50%] border-l-[2px] border-[#FF014F] relative px-3 lg:px-6">
-                <div className="h-[20px] w-[20px] rounded-full border-4 absolute top-[-16px] left-[-11px] border-[#FF014F]"></div>
-                <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  JavaScript: ES6.
-                </h2>
-                <p className="text-[14px] font-semibold my-4 font-Manrop leading-[24px] text-[#202942]">
-                  PIRPLEI
-                </p>
-                <h2 className="bg-[#FF014F] text-white mb-4 font-bold text-[15px] w-[50%] p-2">
-                  2022
-                </h2>
-              </div>
-              <div className="w-full lg:w-[50%] border-l-[2px] border-[#FF014F] relative px-3 lg:px-6">
-                <div className="h-[20px] w-[20px] rounded-full border-4 absolute top-[-16px] left-[-11px] border-[#FF014F]"></div>
-                <h2 className="text-[20px] font-bold font-Manrop leading-[24px] text-[#202942]">
-                  Node Js
-                </h2>
-                <p className="text-[14px] font-semibold my-4 font-Manrop leading-[24px] text-[#202942]">
-                  CODEDAMN
-                </p>
-                <h2 className="bg-[#FF014F] text-white mb-4 font-bold text-[15px] w-[50%] p-2">
-                  2020
-                </h2>
-              </div>
-            </div>
-          </div>
-        )}
+                ))}
+              </motion.div>
+            )}
+
+            {activeTab === "education" && (
+              <motion.div
+                key="education"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25 }}
+                className="flex w-full flex-col gap-16"
+              >
+                <TimelineRow items={DEGREES} />
+                <TimelineRow items={CERTIFICATIONS} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
 };
+
+const TimelineRow = ({ items }) => (
+  <div className="flex flex-col items-stretch gap-8 sm:flex-row">
+    {items.map((item) => (
+      <div
+        key={item.title + item.period}
+        className="relative w-full border-l-2 px-3 lg:px-6"
+        style={{ borderColor: ACCENT }}
+      >
+        <div
+          className="absolute left-[-11px] top-[-16px] h-5 w-5 rounded-full border-4 bg-white"
+          style={{ borderColor: ACCENT }}
+        />
+        <h3
+          className="font-Manrop text-[20px] font-bold capitalize leading-6"
+          style={{ color: INK }}
+        >
+          {item.title}
+        </h3>
+        <p
+          className="my-3 font-Manrop text-[14px] font-semibold uppercase leading-6"
+          style={{ color: INK }}
+        >
+          {item.place}
+        </p>
+        <span
+          className="inline-block px-3 py-1.5 font-Manrop text-[14px] font-bold text-white"
+          style={{ backgroundColor: ACCENT }}
+        >
+          {item.period}
+        </span>
+      </div>
+    ))}
+  </div>
+);
 
 export default About;
